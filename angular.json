@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "live-weather",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "live-weather": {
+      "projectType": "application",
+      "root": "apps/live-weather",
+      "sourceRoot": "apps/live-weather/src",
+      "prefix": "weather-base",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/live-weather",
+            "index": "apps/live-weather/src/index.html",
+            "main": "apps/live-weather/src/main.ts",
+            "polyfills": "apps/live-weather/src/polyfills.ts",
+            "tsConfig": "apps/live-weather/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/live-weather/src/favicon.ico",
+              "apps/live-weather/src/assets"
+            ],
+            "styles": ["apps/live-weather/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/live-weather/src/environments/environment.ts",
+                  "with": "apps/live-weather/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "live-weather:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "live-weather:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "live-weather:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/live-weather/src/**/*.ts",
+              "apps/live-weather/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/live-weather"],
+          "options": {
+            "jestConfig": "apps/live-weather/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "live-weather-e2e": {
+      "root": "apps/live-weather-e2e",
+      "sourceRoot": "apps/live-weather-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/live-weather-e2e/cypress.json",
+            "tsConfig": "apps/live-weather-e2e/tsconfig.e2e.json",
+            "devServerTarget": "live-weather:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "live-weather:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/live-weather-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
