@@ -37,7 +37,8 @@ export class GooglePlacesService {
     let placesApiUrl;
 
     if (environment.production) {
-      placesApiUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${city.name}`
+      placesApiUrl = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place` +
+        `/findplacefromtext/json?input=${city.name}`
         + `&inputtype=textquery&fields=photos&key=${environment.googleKeyNetlify}`;
 
       return this.httpClient.get<IGooglePlace>(placesApiUrl).pipe(map((googlePlace: IGooglePlace) => {
