@@ -61,8 +61,8 @@ export class CityDetailsContainerComponent implements OnInit {
         weatherReport,
         placeDetails
       }).subscribe((results) => {
-        this.place.photoUrl = results.placeDetails;
         this.weatherReport = results.weatherReport;
+        this.place.photoUrl = results.placeDetails;
       });
     })
 

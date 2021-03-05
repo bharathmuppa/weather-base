@@ -38,10 +38,10 @@ export class GooglePlacesService {
 
     if (environment.production) {
       placesApiUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${city.name}`
-        + `&inputtype=textquery&fields=photos&key=${environment.googleKey}`;
+        + `&inputtype=textquery&fields=photos&key=${environment.googleKeyNetlify}`;
 
       return this.httpClient.get<IGooglePlace>(placesApiUrl).pipe(map((googlePlace: IGooglePlace) => {
-        return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKey}`
+        return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKeyNetlify}`
           + `&photoreference=${googlePlace.candidates[0].photos[0].photo_reference}`
       }));
     } else {
