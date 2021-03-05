@@ -27,18 +27,23 @@ import { SmartPlaceCardComponent } from './smart-place-card/smart-place-card.com
 import { InfoCardComponent } from './info-card/info-card.component';
 import { CurrentWeatherSummaryContainerComponent } from './current-weather-summary-container/current-weather-summary-container.component';
 import { CurrentWeatherDetailsContainerComponent } from './current-weather-details-container/current-weather-details-container.component';
+import { AirPollutionCardComponent } from './air-pollution-card/air-pollution-card.component';
+import { AirQualityIndexPipe } from './pipes/air-quality-index.pipe';
 
 @NgModule({
   declarations: [
+
+    AirPollutionCardComponent,
+    AirQualityIndexPipe,
+    CurrentWeatherSummaryContainerComponent,
+    CurrentWeatherDetailsContainerComponent,
+    CountryFlagComponent,
+    InfoCardComponent,
     PlaceCardComponent,
     PlaceHourlyForecastComponent,
-    CountryFlagComponent,
-    WeatherIconPipe,
     RoundoffPipe,
     SmartPlaceCardComponent,
-    InfoCardComponent,
-    CurrentWeatherSummaryContainerComponent,
-    CurrentWeatherDetailsContainerComponent
+    WeatherIconPipe,
   ],
   imports: [
     CommonModule,
@@ -55,6 +60,7 @@ import { CurrentWeatherDetailsContainerComponent } from './current-weather-detai
     NgxChartsModule
   ],
   exports: [
+    AirPollutionCardComponent,
     CountryFlagComponent,
     FlexLayoutModule,
     MatAutocompleteModule,

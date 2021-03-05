@@ -1,0 +1,17 @@
+:host {
+    width: 100%;
+}
+
+.place-card {
+    .air-quality__information-container {
+        padding: 1rem;
+
+        div {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+}

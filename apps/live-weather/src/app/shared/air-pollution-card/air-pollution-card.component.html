@@ -1,0 +1,52 @@
+<div class="place-card mat-elevation-z6" fxLayout="column">
+  <mat-toolbar
+    fxLayout="row"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="0.5rem"
+    class="place-card__header"
+    color="primary"
+  >
+    <span id="place-name" class="pointer" (click)="goToPlaceDetails(place)">{{ place?.name }}</span>
+    <span fxFlex></span>
+  </mat-toolbar>
+  <div class="air-quality__information-container" fxLayout="row" fxLayoutAlign="start center">
+    <weather-base-info-card
+      label="Air Quality"
+      value="{{ airPollutionReport?.main?.aqi | airQualityIndex }}"
+    ></weather-base-info-card>
+    <span fxFlex></span>
+    <weather-base-info-card
+      label="Corbon Monoxide"
+      value="{{ airPollutionReport?.components?.co }}μg/m3"
+    ></weather-base-info-card>
+  </div>
+  <div class="air-quality__information-container" fxLayout="row" fxLayoutAlign="start center">
+    <weather-base-info-card
+      label="Nitrogen monoxide"
+      value="{{ airPollutionReport?.components?.no }}μg/m3"
+    ></weather-base-info-card>
+    <span fxFlex></span>
+    <weather-base-info-card
+      label="Nitrogen dioxide"
+      value="{{ airPollutionReport?.components?.no2 }}"
+    ></weather-base-info-card>
+  </div>
+  <div class="air-quality__information-container" fxLayout="row" fxLayoutAlign="start center">
+    <weather-base-info-card
+      label="Ozone"
+      value="{{ airPollutionReport?.components?.o3 }}μg/m3"
+    ></weather-base-info-card>
+    <span fxFlex></span>
+    <weather-base-info-card
+      label="Sulphur dioxide"
+      value="{{ airPollutionReport?.components?.so2 }}μg/m3"
+    ></weather-base-info-card>
+  </div>
+  <div class="air-quality__information-container" fxLayout="row" fxLayoutAlign="start center">
+    <weather-base-info-card
+      label="Ammonia"
+      value="{{ airPollutionReport?.components?.nh3 }}μg/m3"
+    ></weather-base-info-card>
+    <span fxFlex></span>
+  </div>
+</div>

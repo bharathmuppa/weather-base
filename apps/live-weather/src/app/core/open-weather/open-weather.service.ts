@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { IPlace } from '../../shared/models/IPlace';
 import { IOpenWeatherReport } from '../../shared/models/IOpenWeatherReport';
+import { IAirPollution } from '../../shared/models/IAirPollution';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,8 @@ export class OpenWeatherService {
   private currentWeatherApiUrl = environment.openWeatherURL + environment.currentWeatherAPi;
 
   private oneCallApiUrl = environment.openWeatherURL + environment.onceCallAPI;
+
+  private airPollutionUrl = environment.openWeatherURL + environment.airPollutionAPI;
 
 
 
@@ -46,5 +49,18 @@ export class OpenWeatherService {
       `&exclude=minutely,daily&units=metric&appid=${environment.openWeatherAPIkey}`
 
     return this.httpClient.get<IOpenWeatherReport>(finalUrl);
+  }
+
+  /**
+   * Gets weather condition for the requested location
+   *
+   * @param city location details of the city
+   * @returns weather condition details observer
+   */
+  public getAirPollutionDetails(city: IPlace): Observable<IAirPollution> {
+    const finalUrl = `${this.airPollutionUrl}lat=${city.coord.lat}&lon=${city.coord.lon}` +
+      `&appid=${environment.openWeatherAPIkey}`
+
+    return this.httpClient.get<IAirPollution>(finalUrl);
   }
 }

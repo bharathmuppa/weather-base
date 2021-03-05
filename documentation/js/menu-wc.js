@@ -55,13 +55,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-64c8b1a083dfeb29dabd9aaaad700aa1"' : 'data-target="#xs-components-links-module-AppModule-64c8b1a083dfeb29dabd9aaaad700aa1"' }>
+                                            'data-target="#components-links-module-AppModule-bad8bb1913c87b5a7ec2478bf4cdb2c6"' : 'data-target="#xs-components-links-module-AppModule-bad8bb1913c87b5a7ec2478bf4cdb2c6"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-64c8b1a083dfeb29dabd9aaaad700aa1"' :
-                                            'id="xs-components-links-module-AppModule-64c8b1a083dfeb29dabd9aaaad700aa1"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-bad8bb1913c87b5a7ec2478bf4cdb2c6"' :
+                                            'id="xs-components-links-module-AppModule-bad8bb1913c87b5a7ec2478bf4cdb2c6"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -90,13 +90,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-AppModule-64c8b1a083dfeb29dabd9aaaad700aa1"' : 'data-target="#xs-injectables-links-module-AppModule-64c8b1a083dfeb29dabd9aaaad700aa1"' }>
+                                        'data-target="#injectables-links-module-AppModule-bad8bb1913c87b5a7ec2478bf4cdb2c6"' : 'data-target="#xs-injectables-links-module-AppModule-bad8bb1913c87b5a7ec2478bf4cdb2c6"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AppModule-64c8b1a083dfeb29dabd9aaaad700aa1"' :
-                                        'id="xs-injectables-links-module-AppModule-64c8b1a083dfeb29dabd9aaaad700aa1"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AppModule-bad8bb1913c87b5a7ec2478bf4cdb2c6"' :
+                                        'id="xs-injectables-links-module-AppModule-bad8bb1913c87b5a7ec2478bf4cdb2c6"' }>
                                         <li class="link">
                                             <a href="injectables/DataStoreService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>DataStoreService</a>
@@ -126,13 +126,17 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/SharedModule.html" data-type="entity-link">SharedModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-SharedModule-8c12410b6e934aff999b54a774cf56c7"' : 'data-target="#xs-components-links-module-SharedModule-8c12410b6e934aff999b54a774cf56c7"' }>
+                                            'data-target="#components-links-module-SharedModule-be323f0449241498664bd530eb6216d9"' : 'data-target="#xs-components-links-module-SharedModule-be323f0449241498664bd530eb6216d9"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-8c12410b6e934aff999b54a774cf56c7"' :
-                                            'id="xs-components-links-module-SharedModule-8c12410b6e934aff999b54a774cf56c7"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-be323f0449241498664bd530eb6216d9"' :
+                                            'id="xs-components-links-module-SharedModule-be323f0449241498664bd530eb6216d9"' }>
+                                            <li class="link">
+                                                <a href="components/AirPollutionCardComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">AirPollutionCardComponent</a>
+                                            </li>
                                             <li class="link">
                                                 <a href="components/CountryFlagComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">CountryFlagComponent</a>
@@ -165,13 +169,17 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-SharedModule-8c12410b6e934aff999b54a774cf56c7"' : 'data-target="#xs-pipes-links-module-SharedModule-8c12410b6e934aff999b54a774cf56c7"' }>
+                                            'data-target="#pipes-links-module-SharedModule-be323f0449241498664bd530eb6216d9"' : 'data-target="#xs-pipes-links-module-SharedModule-be323f0449241498664bd530eb6216d9"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-SharedModule-8c12410b6e934aff999b54a774cf56c7"' :
-                                            'id="xs-pipes-links-module-SharedModule-8c12410b6e934aff999b54a774cf56c7"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-SharedModule-be323f0449241498664bd530eb6216d9"' :
+                                            'id="xs-pipes-links-module-SharedModule-be323f0449241498664bd530eb6216d9"' }>
+                                            <li class="link">
+                                                <a href="pipes/AirQualityIndexPipe.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">AirQualityIndexPipe</a>
+                                            </li>
                                             <li class="link">
                                                 <a href="pipes/RoundoffPipe.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">RoundoffPipe</a>
@@ -230,6 +238,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
                                 <a href="interfaces/Chainable.html" data-type="entity-link">Chainable</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IAirPollution.html" data-type="entity-link">IAirPollution</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IAirQuality.html" data-type="entity-link">IAirQuality</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IChart.html" data-type="entity-link">IChart</a>

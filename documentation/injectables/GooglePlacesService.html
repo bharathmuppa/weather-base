@@ -102,7 +102,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">apps/live-weather/src/app/core/google-places/google-places.service.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">apps/live-weather/src/app/core/google-places/google-places.service.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -176,8 +176,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">apps/live-weather/src/app/core/google-places/google-places.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">apps/live-weather/src/app/core/google-places/google-places.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -239,6 +239,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+
 import { Injectable } from &#x27;@angular/core&#x27;;
 
 import { Observable } from &#x27;rxjs&#x27;;
@@ -271,14 +272,29 @@ export class GooglePlacesService {
    * @returns image url
    */
   public getPlaceImage(city: IPlace): Observable&lt;string&gt; {
-    const placesApiUrl &#x3D; &#x60;places-api?input&#x3D;${city.name}&#x60;
-      + &#x60;&amp;inputtype&#x3D;textquery&amp;fields&#x3D;photos&amp;key&#x3D;${environment.googleKey}&#x60;;
+    let placesApiUrl;
+
+    if (environment.production) {
+      placesApiUrl &#x3D; &#x60;https://maps.googleapis.com/maps/api/place&#x60; +
+        &#x60;/findplacefromtext/json?input&#x3D;${city.name}&#x60;
+        + &#x60;&amp;inputtype&#x3D;textquery&amp;fields&#x3D;photos&amp;key&#x3D;${environment.googleKeyNetlify}&#x60;;
+
+      return this.httpClient.get&lt;IGooglePlace&gt;(placesApiUrl).pipe(map((googlePlace: IGooglePlace) &#x3D;&gt; {
+        return &#x60;https://maps.googleapis.com/maps/api/place/photo?maxwidth&#x3D;320&amp;&amp;key&#x3D;${environment.googleKeyNetlify}&#x60;
+          + &#x60;&amp;photoreference&#x3D;${googlePlace.candidates[0].photos[0].photo_reference}&#x60;
+      }));
+    } else {
+      placesApiUrl &#x3D; &#x60;places-api?input&#x3D;${city.name}&#x60;
+        + &#x60;&amp;inputtype&#x3D;textquery&amp;fields&#x3D;photos&amp;key&#x3D;${environment.googleKey}&#x60;;
+
+      return this.httpClient.get&lt;IGooglePlace&gt;(placesApiUrl).pipe(map((googlePlace: IGooglePlace) &#x3D;&gt; {
+        return &#x60;https://maps.googleapis.com/maps/api/place/photo?maxwidth&#x3D;320&amp;&amp;key&#x3D;${environment.googleKey}&#x60;
+          + &#x60;&amp;photoreference&#x3D;${googlePlace.candidates[0].photos[0].photo_reference}&#x60;
+      }));
+    }
 
 
-    return this.httpClient.get&lt;IGooglePlace&gt;(placesApiUrl).pipe(map((googlePlace: IGooglePlace) &#x3D;&gt; {
-      return &#x60;https://maps.googleapis.com/maps/api/place/photo?maxwidth&#x3D;320&amp;&amp;key&#x3D;${environment.googleKey}&#x60;
-        + &#x60;&amp;photoreference&#x3D;${googlePlace.candidates[0].photos[0].photo_reference}&#x60;
-    }));
+
   }
 }
 </code></pre>

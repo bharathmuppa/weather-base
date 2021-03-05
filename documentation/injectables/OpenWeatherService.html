@@ -76,6 +76,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
+                                <a href="#airPollutionUrl">airPollutionUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#currentWeatherApiUrl">currentWeatherApiUrl</a>
                             </li>
                             <li>
@@ -94,6 +98,10 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAirPollutionDetails">getAirPollutionDetails</a>
+                            </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getCurrentWeatherCondition">getCurrentWeatherCondition</a>
@@ -121,7 +129,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -175,6 +183,86 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getAirPollutionDetails"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getAirPollutionDetails
+                        </b>
+                        <a href="#getAirPollutionDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAirPollutionDetails(city: <a href="../interfaces/IPlace.html">IPlace</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets weather condition for the requested location</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>city</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPlace.html" target="_self" >IPlace</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>location details of the city</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IAirPollution.html" target="_self" >Observable&lt;IAirPollution&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>weather condition details observer</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getCurrentWeatherCondition"></a>
                     <span class="name">
                         <b>
@@ -195,8 +283,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:47</a></div>
                 </td>
             </tr>
 
@@ -261,6 +349,33 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="airPollutionUrl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            airPollutionUrl</b>
+                            <a href="#airPollutionUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>environment.openWeatherURL + environment.airPollutionAPI</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="currentWeatherApiUrl"></a>
                         <span class="name">
                             <b>
@@ -277,7 +392,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -304,7 +419,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">apps/live-weather/src/app/core/open-weather/open-weather.service.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -325,6 +440,7 @@ import { Observable } from &#x27;rxjs&#x27;;
 import { environment } from &#x27;../../../environments/environment&#x27;;
 import { IPlace } from &#x27;../../shared/models/IPlace&#x27;;
 import { IOpenWeatherReport } from &#x27;../../shared/models/IOpenWeatherReport&#x27;;
+import { IAirPollution } from &#x27;../../shared/models/IAirPollution&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -340,6 +456,8 @@ export class OpenWeatherService {
   private currentWeatherApiUrl &#x3D; environment.openWeatherURL + environment.currentWeatherAPi;
 
   private oneCallApiUrl &#x3D; environment.openWeatherURL + environment.onceCallAPI;
+
+  private airPollutionUrl &#x3D; environment.openWeatherURL + environment.airPollutionAPI;
 
 
 
@@ -363,6 +481,19 @@ export class OpenWeatherService {
       &#x60;&amp;exclude&#x3D;minutely,daily&amp;units&#x3D;metric&amp;appid&#x3D;${environment.openWeatherAPIkey}&#x60;
 
     return this.httpClient.get&lt;IOpenWeatherReport&gt;(finalUrl);
+  }
+
+  /**
+   * Gets weather condition for the requested location
+   *
+   * @param city location details of the city
+   * @returns weather condition details observer
+   */
+  public getAirPollutionDetails(city: IPlace): Observable&lt;IAirPollution&gt; {
+    const finalUrl &#x3D; &#x60;${this.airPollutionUrl}lat&#x3D;${city.coord.lat}&amp;lon&#x3D;${city.coord.lon}&#x60; +
+      &#x60;&amp;appid&#x3D;${environment.openWeatherAPIkey}&#x60;
+
+    return this.httpClient.get&lt;IAirPollution&gt;(finalUrl);
   }
 }
 </code></pre>

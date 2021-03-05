@@ -23,7 +23,7 @@
     "format:write": "nx format:write",
     "format:check": "nx format:check",
     "update": "nx migrate latest",
-    "generate:Docs": "compodoc -p ./tsconfig.compodoc.json -s",
+    "generate:Docs": "compodoc -p ./tsconfig.compodoc.json ",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help"

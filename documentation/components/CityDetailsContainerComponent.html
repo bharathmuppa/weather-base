@@ -179,7 +179,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -319,8 +319,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:53</a></div>
                 </td>
             </tr>
 
@@ -360,8 +360,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:80</a></div>
                 </td>
             </tr>
 
@@ -442,7 +442,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -470,7 +470,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">apps/live-weather/src/app/city-details-container/city-details-container.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -485,7 +485,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { forkJoin } from &#x27;rxjs&#x27;;
+import { forkJoin, Observable, of } from &#x27;rxjs&#x27;;
+import { catchError } from &#x27;rxjs/operators&#x27;;
 import { DataStoreService } from &#x27;../core/data-store/data-store.service&#x27;;
 
 import { GooglePlacesService } from &#x27;../core/google-places/google-places.service&#x27;;
@@ -543,9 +544,12 @@ export class CityDetailsContainerComponent implements OnInit {
       forkJoin({
         weatherReport,
         placeDetails
-      }).subscribe((results) &#x3D;&gt; {
-        this.place.photoUrl &#x3D; results.placeDetails;
-        this.weatherReport &#x3D; results.weatherReport;
+      }).pipe(catchError(_ &#x3D;&gt; of(null))).subscribe((results) &#x3D;&gt; {
+        if (!results) {
+          return;
+        }
+        this.weatherReport &#x3D; results.weatherReport || {};
+        this.place.photoUrl &#x3D; results.placeDetails || &#x27;&#x27;;
       });
     })
 
@@ -632,7 +636,7 @@ export class CityDetailsContainerComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div  fxFill  class="city-details-container"  fxLayout="row"  fxLayout.xs="column"  fxLayoutAlign="start flex-start"  fxLayoutAlign.xs="start center"  fxLayoutGap="2rem">  <weather-base-place-card    [place]="place"    [weather]="weatherReport"    *ngIf="place && weatherReport"    fxFlex="30%"    fxFlex.xs="100%"    (addPlaceToFavorites)="onFavoriteAdd($event)"  ></weather-base-place-card>  <weather-base-place-hourly-forecast    fxFlex="68%"    fxFlex.xs="100%"    [place]="place"    [weather]="weatherReport"    *ngIf="place && weatherReport"  ></weather-base-place-hourly-forecast>  <!-- Place for weeks data--></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'weather-base-root'},{'name': 'CityDetailsContainerComponent', 'selector': 'weather-base-city-details-container'},{'name': 'CitySearchComponent', 'selector': 'weather-base-city-search'},{'name': 'CountryFlagComponent', 'selector': 'weather-base-country-flag'},{'name': 'CurrentWeatherDetailsContainerComponent', 'selector': 'weather-base-current-weather-details-container'},{'name': 'CurrentWeatherSummaryContainerComponent', 'selector': 'weather-base-current-weather-summary-container'},{'name': 'DashboardComponent', 'selector': 'weather-base-dashboard'},{'name': 'FavoritePlacesComponent', 'selector': 'weather-base-favorite-places'},{'name': 'HeaderComponent', 'selector': 'weather-base-header'},{'name': 'InfoCardComponent', 'selector': 'weather-base-info-card'},{'name': 'PlaceCardComponent', 'selector': 'weather-base-place-card'},{'name': 'PlaceHourlyForecastComponent', 'selector': 'weather-base-place-hourly-forecast'},{'name': 'SmartPlaceCardComponent', 'selector': 'weather-base-smart-place-card'}];
+    var COMPONENTS = [{'name': 'AirPollutionCardComponent', 'selector': 'weather-base-air-pollution-card'},{'name': 'AppComponent', 'selector': 'weather-base-root'},{'name': 'CityDetailsContainerComponent', 'selector': 'weather-base-city-details-container'},{'name': 'CitySearchComponent', 'selector': 'weather-base-city-search'},{'name': 'CountryFlagComponent', 'selector': 'weather-base-country-flag'},{'name': 'CurrentWeatherDetailsContainerComponent', 'selector': 'weather-base-current-weather-details-container'},{'name': 'CurrentWeatherSummaryContainerComponent', 'selector': 'weather-base-current-weather-summary-container'},{'name': 'DashboardComponent', 'selector': 'weather-base-dashboard'},{'name': 'FavoritePlacesComponent', 'selector': 'weather-base-favorite-places'},{'name': 'HeaderComponent', 'selector': 'weather-base-header'},{'name': 'InfoCardComponent', 'selector': 'weather-base-info-card'},{'name': 'PlaceCardComponent', 'selector': 'weather-base-place-card'},{'name': 'PlaceHourlyForecastComponent', 'selector': 'weather-base-place-hourly-forecast'},{'name': 'SmartPlaceCardComponent', 'selector': 'weather-base-smart-place-card'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CityDetailsContainerComponent'};
 </script>
