@@ -2,7 +2,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { DataStoreService } from '../core/data-store/data-store.service';
 
 import { GooglePlacesService } from '../core/google-places/google-places.service';
@@ -60,9 +61,12 @@ export class CityDetailsContainerComponent implements OnInit {
       forkJoin({
         weatherReport,
         placeDetails
-      }).subscribe((results) => {
-        this.weatherReport = results.weatherReport;
-        this.place.photoUrl = results.placeDetails;
+      }).pipe(catchError(_ => of(null))).subscribe((results) => {
+        if (!results) {
+          return;
+        }
+        this.weatherReport = results.weatherReport || {};
+        this.place.photoUrl = results.placeDetails || '';
       });
     })
 
