@@ -1,6 +1,6 @@
 // Copyright WeatherBase 2021
 
-import { HttpClientJsonpModule, HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
 
