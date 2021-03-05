@@ -1,0 +1,33 @@
+<mat-toolbar class="mat-elevation-z1" color="primary" fxLayout="row" fxLayoutAlign="center">
+  <form>
+    <input
+      type="text"
+      matInput
+      fxFlex="50vw"
+      fxFlex.xs="90vw"
+      id="city-search-field"
+      placeholder="Search City"
+      [formControl]="cityNameControl"
+      [matAutocomplete]="auto"
+      class="city-search"
+    />
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+      class="city-autocomplete"
+      (optionSelected)="getWeatherCondition($event.option.value)"
+    >
+      <mat-option
+        *ngFor="let option of filteredCities$ | async"
+        [value]="option"
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+      >
+        <b>
+          <i>{{ option.name }}</i></b
+        >
+        <weather-base-country-flag [country]="option.country"></weather-base-country-flag>
+      </mat-option>
+    </mat-autocomplete>
+  </form>
+</mat-toolbar>

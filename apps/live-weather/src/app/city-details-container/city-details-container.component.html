@@ -1,0 +1,27 @@
+<div
+  fxFill
+  class="city-details-container"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutAlign="start flex-start"
+  fxLayoutAlign.xs="start center"
+  fxLayoutGap="2rem"
+>
+  <weather-base-place-card
+    [place]="place"
+    [weather]="weatherReport"
+    *ngIf="place && weatherReport"
+    fxFlex="30%"
+    fxFlex.xs="100%"
+    (addPlaceToFavorites)="onFavoriteAdd($event)"
+  ></weather-base-place-card>
+
+  <weather-base-place-hourly-forecast
+    fxFlex="68%"
+    fxFlex.xs="100%"
+    [place]="place"
+    [weather]="weatherReport"
+    *ngIf="place && weatherReport"
+  ></weather-base-place-hourly-forecast>
+  <!-- Place for weeks data-->
+</div>

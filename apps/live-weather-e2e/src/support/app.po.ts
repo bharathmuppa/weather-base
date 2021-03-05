@@ -1,1 +1,3 @@
-export const getGreeting = () => cy.get('h1');
+// Copyright WeatherBase 2021
+
+export const getGreeting = () => cy.get('#header-title');

@@ -1,0 +1,44 @@
+<div class="place-card mat-elevation-z11" fxLayout="column">
+  <mat-toolbar
+    fxLayout="row"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="0.5rem"
+    class="place-card__header"
+    color="primary"
+  >
+    <span id="place-name" (click)="goToPlaceDetails(place)" class="pointer">{{ place?.name }}</span>
+    <span fxFlex></span>
+    <mat-icon
+      aria-hidden="false"
+      [attr.aria-label]="'Mark  {{ place?.name }} as favorite'"
+      class="pointer"
+      [color]="place?.isFavorite ? 'accent' : ''"
+      (click)="toggleFavorite()"
+      >favorite</mat-icon
+    >
+  </mat-toolbar>
+  <img
+    mat-card-image
+    *ngIf="place?.photoUrl"
+    [src]="place?.photoUrl"
+    alt="A beautiful picture of {{ place?.name }}"
+    class="place-card__image"
+  />
+
+  <weather-base-current-weather-summary-container
+    [weather]="weather.current"
+    *ngIf="weather?.current"
+  ></weather-base-current-weather-summary-container>
+  <div *ngIf="!weather" fxLayout="column" fxLayoutGap="1rem" fxLayoutAlign="start center">
+    <mat-progress-bar *ngIf="loadingWeather" mode="indeterminate" color="accent"></mat-progress-bar>
+    <h3 *ngIf="loadingWeather">Loading weather details</h3>
+    <h3 *ngIf="!loadingWeather">Not able to load weather details</h3>
+  </div>
+
+  <weather-base-current-weather-details-container
+    fxFlex
+    [weather]="weather.current"
+    *ngIf="weather?.current"
+  >
+  </weather-base-current-weather-details-container>
+</div>

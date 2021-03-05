@@ -1,9 +1,17 @@
+// Copyright WeatherBase 2021
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
   production: false,
+  openWeatherURL: 'https://api.openweathermap.org/data/2.5/',
+  currentWeatherAPi: 'weather?',
+  onceCallAPI: 'onecall?',
+  iconsApi: 'http://openweathermap.org/img/w/',
+  openWeatherAPIkey: 'd5d148fa23f7958ae9ad9fa0b2aaf860',
+  googleKey: 'AIzaSyC1fENFHQQodb4AbjhzXdR_ECL2ITbsajo'
 };
 
 /*

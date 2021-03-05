@@ -1,0 +1,26 @@
+@import "~@angular/material/theming";
+
+$pink: mat-color(mat-palette($mat-pink));
+
+
+.temperature-card {
+    padding: 1rem;
+}
+
+.temperature {
+    font-size: larger;
+    font-weight: bold;
+    line-height: 2rem;
+}
+
+.red {
+    color: $pink
+}
+
+.live-icon {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: $pink;
+}

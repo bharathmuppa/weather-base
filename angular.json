@@ -51,7 +51,7 @@
               "apps/live-weather/src/favicon.ico",
               "apps/live-weather/src/assets"
             ],
-            "styles": ["apps/live-weather/src/styles.scss"],
+            "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "apps/live-weather/src/styles.scss"],
             "scripts": []
           },
           "configurations": {

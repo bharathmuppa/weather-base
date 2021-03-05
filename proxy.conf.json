@@ -1,0 +1,10 @@
+{
+  "/places-api": {
+    "target": "https://maps.googleapis.com/maps/api/place/findplacefromtext/json",
+    "secure": true,
+    "pathRewrite": {
+      "^/places-api": ""
+    },
+    "changeOrigin": true
+  }
+}

@@ -1,33 +1,311 @@
 {
   "root": true,
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "ignorePatterns": [
+    "**/*"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "@nrwl/nx",
+    "jsdoc",
+    "header",
+    "deprecation"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:jsdoc/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:@typescript-eslint/eslint-recommended"
+  ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
+      "settings": {
+        "jsdoc": {
+          "ignorePrivate": true,
+          "ignoreInternal": true
+        }
+      },
+      "parserOptions": {
+        "project": "./tsconfig.*?.json"
+      }
+    },
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "extends": [
+        "plugin:@nrwl/nx/typescript"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.*?.json"
+      },
       "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
+        "eqeqeq": [
+          "error",
+          "always"
+        ],
+        "lines-between-class-members": "error",
+        "max-classes-per-file": [
+          "warn",
+          1
+        ],
+        "no-bitwise": "error",
+        "no-multiple-empty-lines": [
           "error",
           {
-            "enforceBuildableLibDependency": true,
+            "max": 1,
+            "maxBOF": 0,
+            "maxEOF": 1
+          }
+        ],
+        "deprecation/deprecation": "warn",
+        "padding-line-between-statements": [
+          "error",
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "return"
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_",
+            "ignoreRestSiblings": true
+          }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "explicit",
+            "overrides": {
+              "accessors": "off",
+              "constructors": "no-public",
+              "methods": "explicit",
+              "properties": "explicit",
+              "parameterProperties": "explicit"
+            }
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": [
+              "signature",
+              "private-static-field",
+              "protected-static-field",
+              "public-static-field",
+              "private-abstract-field",
+              "private-instance-field",
+              "protected-abstract-field",
+              "protected-instance-field",
+              "public-abstract-field",
+              "public-instance-field",
+              "constructor",
+              "public-static-method",
+              "protected-static-method",
+              "private-static-method",
+              "public-abstract-method",
+              "public-instance-method",
+              "protected-abstract-method",
+              "protected-instance-method",
+              "private-abstract-method",
+              "private-instance-method"
+            ]
+          }
+        ],
+        "@typescript-eslint/array-type": [
+          "error"
+        ],
+        "@typescript-eslint/naming-convention": [
+          "warn",
+          {
+            "selector": [
+              "default"
+            ],
+            "format": [],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": [
+              "variableLike",
+              "memberLike"
+            ],
+            "format": [
+              "camelCase"
+            ]
+          },
+          {
+            "selector": [
+              "parameter"
+            ],
+            "format": [
+              "camelCase"
+            ],
+            "leadingUnderscore": "allow"
+          },
+          {
+            "selector": [
+              "enumMember"
+            ],
+            "format": [
+              "PascalCase",
+              "UPPER_CASE"
+            ]
+          },
+          {
+            "selector": [
+              "typeLike"
+            ],
+            "format": [
+              "PascalCase"
+            ]
+          },
+          {
+            "selector": "interface",
+            "format": [
+              "PascalCase"
+            ],
+            "prefix": [
+              "I"
+            ]
+          }
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": [
+          "warn"
+        ],
+        "@typescript-eslint/ban-ts-comment": [
+          "error",
+          {
+            "ts-ignore": "allow-with-description",
+            "ts-nocheck": "allow-with-description"
+          }
+        ],
+        "header/header": [
+          "error",
+          "line",
+          [
+            {
+              "pattern": "Copyright WeatherBase ((20[0-9]{2}))$"
+            }
+          ]
+        ],
+        "@nrwl/nx/enforce-module-boundaries": [
+          "warn",
+          {
             "allow": [],
             "depConstraints": [
-              { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": [
+                  "*"
+                ]
+              }
+            ],
+            "enforceBuildableLibDependency": true
+          }
+        ],
+        "jsdoc/no-types": 1,
+        "jsdoc/no-undefined-types": 0,
+        "jsdoc/require-description": 1,
+        "jsdoc/require-jsdoc": [
+          "warn",
+          {
+            "require": {
+              "FunctionDeclaration": true,
+              "MethodDefinition": true,
+              "ClassDeclaration": true,
+              "ArrowFunctionExpression": true,
+              "FunctionExpression": true
+            },
+            "contexts": [
+              "TSDeclareFunction",
+              "TSEnumDeclaration",
+              "TSEnumMember",
+              "TSInterfaceDeclaration",
+              "TSMethodSignature",
+              "TSModuleDeclaration",
+              "TSTypeAliasDeclaration"
+            ],
+            "exemptEmptyConstructors": false,
+            "checkGetters": true,
+            "checkSetters": true,
+            "enableFixer": false
+          }
+        ],
+        "jsdoc/require-param": [
+          "warn",
+          {
+            "enableFixer": false
+          }
+        ],
+        "jsdoc/require-param-type": "off",
+        "jsdoc/require-returns": [
+          "warn",
+          {
+            "checkGetters": false
+          }
+        ],
+        "jsdoc/require-returns-type": "off"
+      }
+    },
+    {
+      "files": [
+        "*.js"
+      ],
+      "extends": [
+        "plugin:@nrwl/nx/javascript"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off",
+        "no-undef": "off",
+        "@typescript-eslint/​explicit-function-return-type": "off",
+        "@typescript-eslint/​explicit-member-accessibility": "off"
+      }
+    },
+    {
+      "files": [
+        "*.spec.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "no-undef": "off",
+        "@typescript-eslint/naming-convention": [
+          "warn",
+          {
+            // Part of variableLike but with special rule
+            "selector": [
+              "variable"
+            ],
+            // In test specifications mocked classes using jest.fn should have
+            // PascalCase.
+            "format": [
+              "camelCase",
+              "PascalCase"
             ]
           }
         ]
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
-      "parserOptions": { "project": "./tsconfig.*?.json" },
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {}
+      "files": [
+        "**/stubs/*.ts",
+        "*.spec.ts"
+      ],
+      "rules": {
+        "jsdoc/require-jsdoc": "off",
+        "jsdoc/require-param": "off",
+        "jsdoc/require-returns": "off"
+      }
     }
   ]
 }

@@ -1,0 +1,21 @@
+<div
+  fxFill
+  class="favorites-container"
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="start"
+  fxLayoutAlign.xs="start center"
+  fxLayoutGap="2rem"
+>
+  <ng-container *ngFor="let fav of favoritePlaces">
+    <weather-base-smart-place-card
+      [place]="fav"
+      class="smart-place-container"
+      fxFlex="20%"
+      fxFlex.lg="30%"
+      fxFlex.xs="100%"
+      *ngIf="fav"
+      (addPlaceToFavorites)="onFavoriteAdd($event)"
+    ></weather-base-smart-place-card>
+  </ng-container>
+</div>

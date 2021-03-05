@@ -1,0 +1,27 @@
+<header class="header">
+  <mat-toolbar
+    color="primary"
+    fxFill
+    fxLayout="row"
+    fxLayoutAlign="start center"
+    fxLayoutGap="0.5rem"
+  >
+    <mat-icon svgIcon="weather-base-icon"></mat-icon>
+    <h2 class="pointer" id="header-title" [routerLink]="'/home'">Weather Base</h2>
+    <span fxFlex></span>
+    <mat-icon [matMenuTriggerFor]="menu" aria-label="User Profile button" id="profile-icon"
+      >face</mat-icon
+    >
+    <mat-menu #menu="matMenu">
+      <a mat-button mat-menu-item [routerLink]="'/favorites'" class="pointer go-to-favorites">
+        <mat-icon color="accent">favorite</mat-icon>
+        <span>Favorites</span>
+      </a>
+      <a mat-button mat-menu-item [routerLink]="'/home'" class="pointer">
+        <mat-icon color="accent">settings</mat-icon>
+        <span>Preference</span>
+      </a>
+    </mat-menu>
+  </mat-toolbar>
+</header>
+<weather-base-city-search></weather-base-city-search>

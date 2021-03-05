@@ -1,0 +1,28 @@
+<div
+  class="place-hourly-forecast-container mat-elevation-z11"
+  fxLayout="column"
+>
+  <mat-toolbar
+    fxLayout="row"
+    fxLayoutAlign="start center"
+    class="place-hourly-forecast-container__header"
+    color="primary"
+  >
+    <span>Hourly forecast</span>
+  </mat-toolbar>
+
+  <ngx-charts-line-chart
+    class="place-hourly-forecast-container__chart"
+    [scheme]="colorScheme"
+    legend="false"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [timeline]="true"
+    [results]="weatherData"
+  >
+  </ngx-charts-line-chart>
+</div>
