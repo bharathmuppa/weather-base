@@ -1,0 +1,225 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>weather-base documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">weather-base documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="weatherbase">WeatherBase</h1>
+<h2 id="content">Content</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#project-structure">Project Structure</a></li>
+<li><a href="#deployment">Deployment</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#useful-commands">Commands</a></li>
+<li><a href="#others">Others</a></li>
+</ol>
+<h1 id="introduction">Introduction</h1>
+<p>Weather Base is an web application to Monitor weather in your favorite cities across Netherland.</p>
+<p>It can be extendable to the other parts of world.</p>
+<ol>
+<li>App is built using Angular framework</li>
+<li>Weather related data is retrieved from <a href="https://openweathermap.org/api">Open weather API</a></li>
+<li>Places related data is obtained from google places API</li>
+<li>Project structure is based on monorepo style. (Used Nx)</li>
+</ol>
+<h1 id="installation">Installation</h1>
+<h2 id="local-installation">Local installation</h2>
+<ul>
+<li>Clone this reo using <code>git clone https://github.com/bharathmuppa/weather-base.git</code></li>
+<li>Run <code>npm ci</code> for a clean install.</li>
+<li>Run <code>npm start</code> to start application in your local machine .</li>
+<li>Open chrome and navigate to <code>http://localhost:4200</code></li>
+</ul>
+<h1 id="api">API</h1>
+<p>This project makes use of</p>
+<ol>
+<li><p>Open Weather API (Weather Data)</p>
+<ul>
+<li>Go to <a href="https://openweathermap.org/api">Open weather</a></li>
+<li>Subscribe to corresponding api</li>
+<li>Add a new API key</li>
+<li>Place the new key in angular environment file</li>
+</ul>
+</li>
+<li><p>Google API (Images of places)</p>
+<ul>
+<li>Go to <a href="https://console.cloud.google.com/home/dashboard?project=weatherbase-306123">Google cloud console</a></li>
+<li>Select a project</li>
+<li>Subscribe to places API</li>
+<li>Add an <a href="https://developers.google.com/maps/documentation/places/web-service/get-api-key?hl=it">API key</a></li>
+<li>Place the new key in angular environment file</li>
+</ul>
+</li>
+</ol>
+<h1 id="project-structure">Project Structure</h1>
+<ul>
+<li>This project structure is wel suitable for enterprise level applications to small scale applications.</li>
+<li>It is platform agnostic architecture</li>
+<li>Learn more about <a href="#nx">Nx</a> here</li>
+<li>Configured with latest eslint rules</li>
+<li>Prettier is in place to format the files on Save and on Request</li>
+<li>Equipped with code snippets to help developers to ease the process of documentation</li>
+</ul>
+<h1 id="deployment">Deployment</h1>
+<p>Before deployment, scripts check for any unit test or e2e test anomalies. Not meeting the check wont let you to push the code
+After check code will be pushed to the corresponding branch in github and automatic scripts are in place to deploy it to netlify</p>
+<h1 id="documentation">Documentation</h1>
+<p>Latest Documents will be available <a href="">here</a></p>
+<h1 id="useful-commands">Useful Commands</h1>
+<p>Run <code>ng g component my-component --project=my-app</code> to generate a new component.
+Run <code>npm run generate:Docs</code> to generate docs.
+Run <code>npm run dep-graph</code> to check whole dependencies between projects and libs in this repo.
+Run <code>npm run update</code> to update to latest version.
+Run <code>npm run affected:apps</code> to run sanity check on affected apps</p>
+<h1 id="others">Others</h1>
+<h2 id="code-scaffolding">Code scaffolding</h2>
+<p>Run <code>ng g component my-component --project=my-app</code> to generate a new component.</p>
+<h2 id="build">Build</h2>
+<p>Run <code>ng build my-app</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build.</p>
+<h2 id="running-unit-tests">Running unit tests</h2>
+<p>Run <code>ng test my-app</code> to execute the unit tests via <a href="https://jestjs.io">Jest</a>.</p>
+<p>Run <code>nx affected:test</code> to execute the unit tests affected by a change.</p>
+<h2 id="running-end-to-end-tests">Running end-to-end tests</h2>
+<p>Run <code>ng e2e my-app</code> to execute the end-to-end tests via <a href="https://www.cypress.io">Cypress</a>.</p>
+<p>Run <code>nx affected:e2e</code> to execute the end-to-end tests affected by a change.</p>
+<h2 id="understand-your-workspace">Understand your workspace</h2>
+<p>Run <code>nx dep-graph</code> to see a diagram of the dependencies of your projects.</p>
+<h2 id="further-help">Further help</h2>
+<p>This project was generated using <a href="https://nx.dev">Nx</a>.</p>
+<p>🔎 <strong>Nx is a set of Extensible Dev Tools for Monorepos.</strong></p>
+<h2 id="quick-start--documentation">Quick Start &amp; Documentation</h2>
+<p><a href="https://nx.dev/angular">Nx Documentation</a></p>
+<h2 id="adding-capabilities-to-your-workspace">Adding capabilities to your workspace</h2>
+<p>Nx supports many plugins which add capabilities for developing different types of applications and different tools.</p>
+<p>These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.</p>
+<p>Below are our core plugins:</p>
+<ul>
+<li><a href="https://angular.io">Angular</a><ul>
+<li><code>ng add @nrwl/angular</code></li>
+</ul>
+</li>
+<li>Web (no framework frontends)<ul>
+<li><code>ng add @nrwl/web</code></li>
+</ul>
+</li>
+<li><a href="https://nestjs.com">Nest</a><ul>
+<li><code>ng add @nrwl/nest</code></li>
+</ul>
+</li>
+<li><a href="https://nodejs.org">Node</a><ul>
+<li><code>ng add @nrwl/node</code></li>
+</ul>
+</li>
+</ul>
+<p>There are also many <a href="https://nx.dev/nx-community">community plugins</a> you could add.</p>
+<h2 id="generate-an-application">Generate an application</h2>
+<p>Run <code>ng g @nrwl/angular:app my-app</code> to generate an application.</p>
+<blockquote>
+<p>You can use any of the plugins above to generate applications as well.</p>
+</blockquote>
+<p>When using Nx, you can create multiple applications and libraries in the same workspace.</p>
+<h2 id="generate-a-library">Generate a library</h2>
+<p>Run <code>ng g @nrwl/angular:lib my-lib</code> to generate a library.</p>
+<blockquote>
+<p>You can also use any of the plugins above to generate libraries as well.</p>
+</blockquote>
+<p>Libraries are shareable across libraries and applications. They can be imported from <code>@weather-base/mylib</code>.</p>
+<p>Visit the <a href="https://nx.dev/angular">Nx Documentation</a> to learn more.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

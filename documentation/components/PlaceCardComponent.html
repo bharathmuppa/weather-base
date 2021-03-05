@@ -1,0 +1,567 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>weather-base documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">weather-base documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PlaceCardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>apps/live-weather/src/app/shared/place-card/place-card.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>weather-base-place-card</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./place-card.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./place-card.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentTime">currentTime</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#toggleFavorite">toggleFavorite</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#place">place</a>
+                            </li>
+                            <li>
+                                <a href="#weather">weather</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addPlaceToFavorites">addPlaceToFavorites</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="place"></a>
+                        <b>place</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IPlace.html" target="_self" >IPlace</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">apps/live-weather/src/app/shared/place-card/place-card.component.ts:22</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="weather"></a>
+                        <b>weather</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IOpenWeatherReport.html" target="_self" >IOpenWeatherReport</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">apps/live-weather/src/app/shared/place-card/place-card.component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addPlaceToFavorites"></a>
+                        <b>addPlaceToFavorites</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IPlace.html" target="_self" >EventEmitter&lt;IPlace&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">apps/live-weather/src/app/shared/place-card/place-card.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleFavorite"></a>
+                    <span class="name">
+                        <b>
+                            toggleFavorite
+                        </b>
+                        <a href="#toggleFavorite"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleFavorite()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">apps/live-weather/src/app/shared/place-card/place-card.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Toggles favorite state of a place</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentTime"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            currentTime</b>
+                            <a href="#currentTime"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Date().toISOString()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">apps/live-weather/src/app/shared/place-card/place-card.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Represents current time </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from &#x27;@angular/core&#x27;;
+
+import { IOpenWeatherReport } from &#x27;../models/IOpenWeatherReport&#x27;;
+import { IPlace } from &#x27;../models/IPlace&#x27;;
+
+@Component({
+  selector: &#x27;weather-base-place-card&#x27;,
+  templateUrl: &#x27;./place-card.component.html&#x27;,
+  styleUrls: [&#x27;./place-card.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+/**
+ * Visualize place model as material card element
+ */
+export class PlaceCardComponent {
+
+  /** Represents current time */
+  public currentTime &#x3D; new Date().toISOString();
+
+  @Input() place!: IPlace;
+
+  @Input() weather!: IOpenWeatherReport;
+
+  @Output() addPlaceToFavorites: EventEmitter&lt;IPlace&gt; &#x3D; new EventEmitter();
+
+  /**
+   * Toggles favorite state of a place
+   */
+  toggleFavorite(): void {
+    if (!this.place) {
+      return;
+    }
+    this.addPlaceToFavorites.emit(this.place);
+    this.place.isFavorite &#x3D; !this.place.isFavorite;
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;place-card mat-elevation-z11&quot; fxLayout&#x3D;&quot;column&quot;&gt;
+  &lt;mat-toolbar
+    fxLayout&#x3D;&quot;row&quot;
+    fxLayoutAlign&#x3D;&quot;space-around center&quot;
+    fxLayoutGap&#x3D;&quot;0.5rem&quot;
+    class&#x3D;&quot;place-card__header&quot;
+    color&#x3D;&quot;primary&quot;
+  &gt;
+    &lt;span id&#x3D;&quot;place-name&quot;&gt;{{ place?.name }}&lt;/span&gt;
+
+    &lt;span fxFlex&gt;&lt;/span&gt;
+    &lt;mat-icon
+      aria-hidden&#x3D;&quot;false&quot;
+      [attr.aria-label]&#x3D;&quot;&#x27;Mark  {{ place?.name }} as favorite&#x27;&quot;
+      class&#x3D;&quot;place-card__fav-icon&quot;
+      [color]&#x3D;&quot;place?.isFavorite ? &#x27;accent&#x27; : &#x27;&#x27;&quot;
+      (click)&#x3D;&quot;toggleFavorite()&quot;
+      &gt;favorite&lt;/mat-icon
+    &gt;
+  &lt;/mat-toolbar&gt;
+  &lt;img
+    mat-card-image
+    *ngIf&#x3D;&quot;place?.photoUrl&quot;
+    [src]&#x3D;&quot;place?.photoUrl&quot;
+    alt&#x3D;&quot;A beautiful picture of {{ place?.name }}&quot;
+    class&#x3D;&quot;place-card__image&quot;
+  /&gt;
+  &lt;weather-base-current-weather-summary-container
+    [weather]&#x3D;&quot;weather.current&quot;
+    *ngIf&#x3D;&quot;weather?.current&quot;
+  &gt;&lt;/weather-base-current-weather-summary-container&gt;
+
+  &lt;weather-base-current-weather-details-container
+    fxFlex
+    [weather]&#x3D;&quot;weather.current&quot;
+    *ngIf&#x3D;&quot;weather?.current&quot;
+  &gt;
+  &lt;/weather-base-current-weather-details-container&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./place-card.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+    width: 100%;
+}
+
+.place-card {
+    .place-card__image {
+        filter: brightness(80%);
+        height: 230px;
+
+        &amp;:before {
+            content: &#x27;Image not available&#x27;;
+            display: block;
+            position: absolute;
+            height: 230px;
+            background-size: contain;
+            width: 100%;
+            text-align: center;
+            font-style: italic;
+            color: #b38f8f;
+            line-height: 230px;
+            background-image: url(../../../assets/default-image.png);
+        }
+    }
+
+    .place-card__fav-icon {
+        cursor: pointer;
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="place-card mat-elevation-z11" fxLayout="column">  <mat-toolbar    fxLayout="row"    fxLayoutAlign="space-around center"    fxLayoutGap="0.5rem"    class="place-card__header"    color="primary"  >    <span id="place-name">{{ place?.name }}</span>    <span fxFlex></span>    <mat-icon      aria-hidden="false"      [attr.aria-label]="\'Mark  {{ place?.name }} as favorite\'"      class="place-card__fav-icon"      [color]="place?.isFavorite ? \'accent\' : \'\'"      (click)="toggleFavorite()"      >favorite</mat-icon    >  </mat-toolbar>  <img    mat-card-image    *ngIf="place?.photoUrl"    [src]="place?.photoUrl"    alt="A beautiful picture of {{ place?.name }}"    class="place-card__image"  />  <weather-base-current-weather-summary-container    [weather]="weather.current"    *ngIf="weather?.current"  ></weather-base-current-weather-summary-container>  <weather-base-current-weather-details-container    fxFlex    [weather]="weather.current"    *ngIf="weather?.current"  >  </weather-base-current-weather-details-container></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'weather-base-root'},{'name': 'CityDetailsContainerComponent', 'selector': 'weather-base-city-details-container'},{'name': 'CitySearchComponent', 'selector': 'weather-base-city-search'},{'name': 'CountryFlagComponent', 'selector': 'weather-base-country-flag'},{'name': 'CurrentWeatherDetailsContainerComponent', 'selector': 'weather-base-current-weather-details-container'},{'name': 'CurrentWeatherSummaryContainerComponent', 'selector': 'weather-base-current-weather-summary-container'},{'name': 'DashboardComponent', 'selector': 'weather-base-dashboard'},{'name': 'FavoritePlacesComponent', 'selector': 'weather-base-favorite-places'},{'name': 'HeaderComponent', 'selector': 'weather-base-header'},{'name': 'InfoCardComponent', 'selector': 'weather-base-info-card'},{'name': 'PlaceCardComponent', 'selector': 'weather-base-place-card'},{'name': 'PlaceHourlyForecastComponent', 'selector': 'weather-base-place-hourly-forecast'},{'name': 'SmartPlaceCardComponent', 'selector': 'weather-base-smart-place-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PlaceCardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PlaceCardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

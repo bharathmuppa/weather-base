@@ -33,9 +33,12 @@ export class GooglePlacesService {
    * @returns image url
    */
   public getPlaceImage(city: IPlace): Observable<string> {
-    const placesApiUrl = `places-api?input=${city.name}`
+    let placesApiUrl = '';
+    if (environment.production) {
+      placesApiUrl = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json/'
+    }
+    placesApiUrl = placesApiUrl + `places-api?input=${city.name}`
       + `&inputtype=textquery&fields=photos&key=${environment.googleKey}`;
-
 
     return this.httpClient.get<IGooglePlace>(placesApiUrl).pipe(map((googlePlace: IGooglePlace) => {
       return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKey}`
