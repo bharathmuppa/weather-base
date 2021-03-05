@@ -39,15 +39,22 @@ export class GooglePlacesService {
     if (environment.production) {
       placesApiUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${city.name}`
         + `&inputtype=textquery&fields=photos&key=${environment.googleKey}`;
+
+      return this.httpClient.get<IGooglePlace>(placesApiUrl).pipe(map((googlePlace: IGooglePlace) => {
+        return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKey}`
+          + `&photoreference=${googlePlace.candidates[0].photos[0].photo_reference}`
+      }));
     } else {
       placesApiUrl = `places-api?input=${city.name}`
         + `&inputtype=textquery&fields=photos&key=${environment.googleKey}`;
+
+      return this.httpClient.get<IGooglePlace>(placesApiUrl).pipe(map((googlePlace: IGooglePlace) => {
+        return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKey}`
+          + `&photoreference=${googlePlace.candidates[0].photos[0].photo_reference}`
+      }));
     }
 
 
-    return this.httpClient.jsonp<IGooglePlace>(placesApiUrl, 'callback').pipe(map((googlePlace: IGooglePlace) => {
-      return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKey}`
-        + `&photoreference=${googlePlace.candidates[0].photos[0].photo_reference}`
-    }));
+
   }
 }
