@@ -18,6 +18,12 @@
 
 Weather Base is an web application to Monitor weather in your favorite cities across Netherland.
 
+This app consists of following features
+
+1. Air quality of few selected places in Netehrlands
+2. Search any city within Netherland and get the live and hourly weather report
+3. Add any place as your favorite and go to favorites in menu to check live weather of all your favorite places
+
 It can be extendable to the other parts of world.
 
 1. App is built using Angular framework
