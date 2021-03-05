@@ -1,6 +1,7 @@
 // Copyright WeatherBase 2021
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule, HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
@@ -44,7 +45,7 @@ export class GooglePlacesService {
     }
 
 
-    return this.httpClient.get<IGooglePlace>(placesApiUrl).pipe(map((googlePlace: IGooglePlace) => {
+    return this.httpClient.jsonp<IGooglePlace>(placesApiUrl, 'callback').pipe(map((googlePlace: IGooglePlace) => {
       return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKey}`
         + `&photoreference=${googlePlace.candidates[0].photos[0].photo_reference}`
     }));
