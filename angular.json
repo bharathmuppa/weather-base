@@ -50,10 +50,10 @@
             "assets": [
               {
                 "glob": "_redirects",
-                "input": "src",
-                "output": "/"
+                "input": "apps/live-weather/src",
+                "output": "."
               },
-              "apps/live-weather/src/favicon.ico",
+              "apps/live-weather/src/wb.ico",
               "apps/live-weather/src/assets"
             ],
             "styles": [
