@@ -43,7 +43,7 @@ export class CityDetailsContainerComponent implements OnInit {
     private openWeatherService: OpenWeatherService,
 
     private placesService: PlacesService
-  ) {}
+  ) { }
 
   /**
    * @internal
@@ -59,7 +59,6 @@ export class CityDetailsContainerComponent implements OnInit {
         weatherReport,
         placeDetails,
       })
-        .pipe(catchError((_) => of(null)))
         .subscribe((results) => {
           if (!results) {
             return;

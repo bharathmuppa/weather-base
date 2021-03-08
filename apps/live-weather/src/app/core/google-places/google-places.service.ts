@@ -24,7 +24,7 @@ export class GooglePlacesService {
    *
    * @param httpClient client to perform remote service call
    */
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   /**
    * Gets photo of location requested
@@ -33,35 +33,18 @@ export class GooglePlacesService {
    * @returns image url
    */
   public getPlaceImage(city: IPlace): Observable<string> {
-    let placesApiUrl;
+    const placesApiUrl =
+      `https://europe-west1-weatherbase-306123.cloudfunctions.net/google-place-details?place=${city.name}`;
 
-    if (environment.production) {
-      placesApiUrl =
-        `https://maps.googleapis.com/maps/api/place` +
-        `/findplacefromtext/json?input=${city.name}` +
-        `&inputtype=textquery&fields=photos&key=${environment.googleKeyNetlify}`;
+    return this.httpClient.get<string>(placesApiUrl, {
+      responseType: 'text' as 'json'
+    }).pipe(
+      map((googlePlace: string) => {
+        return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKeyNetlify}` +
+          `&photoreference=${googlePlace}`
+          ;
+      })
+    );
 
-      return this.httpClient.get<IGooglePlace>(placesApiUrl).pipe(
-        map((googlePlace: IGooglePlace) => {
-          return (
-            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKeyNetlify}` +
-            `&photoreference=${googlePlace.candidates[0].photos[0].photo_reference}`
-          );
-        })
-      );
-    } else {
-      placesApiUrl =
-        `places-api?input=${city.name}` +
-        `&inputtype=textquery&fields=photos&key=${environment.googleKey}`;
-
-      return this.httpClient.get<IGooglePlace>(placesApiUrl).pipe(
-        map((googlePlace: IGooglePlace) => {
-          return (
-            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=320&&key=${environment.googleKey}` +
-            `&photoreference=${googlePlace.candidates[0].photos[0].photo_reference}`
-          );
-        })
-      );
-    }
   }
 }
