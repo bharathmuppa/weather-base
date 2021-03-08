@@ -21,16 +21,17 @@ describe('AirPollutionCardComponent', () => {
 
   beforeEach(async () => {
     const openWeatherServiceStub: Partial<OpenWeatherService> = {
-      getAirPollutionDetails: () => { return of(createMock<IAirPollution>()) }
-    }
+      getAirPollutionDetails: () => {
+        return of(createMock<IAirPollution>());
+      },
+    };
 
     await TestBed.configureTestingModule({
       declarations: [AirPollutionCardComponent, AirQualityIndexPipe],
       imports: [MatToolbarModule, HttpClientTestingModule, RouterTestingModule.withRoutes([])],
       providers: [{ provide: OpenWeatherService, useValue: openWeatherServiceStub }],
-      schemas: [NO_ERRORS_SCHEMA]
-    })
-      .compileComponents();
+      schemas: [NO_ERRORS_SCHEMA],
+    }).compileComponents();
   });
 
   beforeEach(() => {

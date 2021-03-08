@@ -7,13 +7,12 @@ import { map } from 'rxjs/operators';
 import { IPlace } from './../../shared/models/IPlace';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 /**
  * Service to get details about available cities
  */
 export class PlacesService {
-
   private places: IPlace[] = [];
 
   /**
@@ -21,10 +20,7 @@ export class PlacesService {
    *
    * @param http client to perform http request
    */
-  constructor(private http: HttpClient) {
-
-  }
-
+  constructor(private http: HttpClient) {}
 
   /**
    * Get All places from json
@@ -42,9 +38,7 @@ export class PlacesService {
    * @returns All the places which were matched with passed param
    */
   public getPlacesByName(name: string): IPlace[] {
-
     return this.places.filter((city: IPlace) => city.name.toLowerCase().indexOf(name) > -1);
-
   }
 
   /**
@@ -54,11 +48,9 @@ export class PlacesService {
    * @returns Place which is matched with passed param
    */
   public getPlaceById(id: number): IPlace {
-
     const city = this.places.filter((city: IPlace) => city.id === id);
 
     return city[0];
-
   }
 
   /**
@@ -67,12 +59,15 @@ export class PlacesService {
    * @returns promise resolver for place data
    */
   public getAllPlacesFromServer(): Promise<boolean> {
-    return this.http.get<{ places: IPlace[] }>('./assets/cities.json').pipe(map((places: { places: IPlace[] }) => {
-      this.places = places.places;
+    return this.http
+      .get<{ places: IPlace[] }>('./assets/cities.json')
+      .pipe(
+        map((places: { places: IPlace[] }) => {
+          this.places = places.places;
 
-      return true;
-    })).toPromise();
+          return true;
+        })
+      )
+      .toPromise();
   }
-
-
 }

@@ -15,17 +15,15 @@ import { IPlace } from '../shared/models/IPlace';
 @Component({
   selector: 'weather-base-city-details-container',
   templateUrl: './city-details-container.component.html',
-  styleUrls: ['./city-details-container.component.scss']
+  styleUrls: ['./city-details-container.component.scss'],
 })
 /**
  * Provides smart container to display detailed place information
  */
 export class CityDetailsContainerComponent implements OnInit {
-
   public place!: IPlace;
 
   public weatherReport!: IOpenWeatherReport;
-
 
   /**
    * Creates instance of ```CityDetailsContainerComponent``` class
@@ -36,40 +34,40 @@ export class CityDetailsContainerComponent implements OnInit {
    * @param openWeatherService instance to request weather details from open weather
    * @param placesService instance to request places information
    */
-  constructor(private activatedRoute: ActivatedRoute,
+  constructor(
+    private activatedRoute: ActivatedRoute,
 
     private dataStoreService: DataStoreService,
     private googlePlacesService: GooglePlacesService,
 
-
     private openWeatherService: OpenWeatherService,
 
     private placesService: PlacesService
-  ) { }
+  ) {}
 
   /**
    * @internal
    */
   ngOnInit(): void {
-
     this.activatedRoute.params.subscribe((params) => {
-      this.place = this.placesService.getPlaceById(+params.id)
+      this.place = this.placesService.getPlaceById(+params.id);
 
       const weatherReport = this.openWeatherService.getCurrentWeatherCondition(this.place);
       const placeDetails = this.googlePlacesService.getPlaceImage(this.place);
 
       forkJoin({
         weatherReport,
-        placeDetails
-      }).pipe(catchError(_ => of(null))).subscribe((results) => {
-        if (!results) {
-          return;
-        }
-        this.weatherReport = results.weatherReport || {};
-        this.place.photoUrl = results.placeDetails || '';
-      });
-    })
-
+        placeDetails,
+      })
+        .pipe(catchError((_) => of(null)))
+        .subscribe((results) => {
+          if (!results) {
+            return;
+          }
+          this.weatherReport = results.weatherReport || {};
+          this.place.photoUrl = results.placeDetails || '';
+        });
+    });
   }
 
   /**
@@ -78,7 +76,6 @@ export class CityDetailsContainerComponent implements OnInit {
    * @param place to be added to favorite collection
    */
   public onFavoriteAdd(place: IPlace): void {
-    this.dataStoreService.addFavoritePlace(place)
+    this.dataStoreService.addFavoritePlace(place);
   }
-
 }

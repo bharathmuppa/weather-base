@@ -1,14 +1,5 @@
 <div class="place-card mat-elevation-z6" fxLayout="column">
-  <mat-toolbar
-    fxLayout="row"
-    fxLayoutAlign="space-around center"
-    fxLayoutGap="0.5rem"
-    class="place-card__header"
-    color="primary"
-  >
-    <span id="place-name" class="pointer" (click)="goToPlaceDetails(place)">{{ place?.name }}</span>
-    <span fxFlex></span>
-  </mat-toolbar>
+  <img src="../../../assets/air-quality.png" fxFlexAlign="center" />
   <div class="air-quality__information-container" fxLayout="row" fxLayoutAlign="start center">
     <weather-base-info-card
       label="Air Quality"

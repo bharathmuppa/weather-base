@@ -5,7 +5,7 @@ import { CanActivate, ActivatedRouteSnapshot, UrlTree, Router } from '@angular/r
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 /**
  * Validates the path before navigating to Place details
@@ -16,15 +16,14 @@ export class ValidateDataForPlaceNavigationGuard implements CanActivate {
    *
    * @param router instance of angular router
    */
-  constructor(private router: Router) {
-
-  }
+  constructor(private router: Router) {}
 
   /**
    * @internal
    */
   canActivate(
-    route: ActivatedRouteSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    route: ActivatedRouteSnapshot
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (!route.params.name || !route.params.id) {
       this.router.navigate(['/home']);
 
@@ -32,7 +31,5 @@ export class ValidateDataForPlaceNavigationGuard implements CanActivate {
     }
 
     return true;
-
   }
-
 }

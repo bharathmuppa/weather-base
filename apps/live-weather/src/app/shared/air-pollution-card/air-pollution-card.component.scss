@@ -1,17 +1,23 @@
 :host {
-    width: 100%;
+  width: 100%;
 }
 
 .place-card {
-    .air-quality__information-container {
-        padding: 1rem;
+  img {
+    width: 4rem;
+    padding: 1rem;
+    justify-content: center;
+  }
 
-        div {
-            margin-bottom: 0.5rem;
-        }
-    }
+  .air-quality__information-container {
+    padding: 1rem;
 
-    .pointer {
-        cursor: pointer;
+    div {
+      margin-bottom: 0.5rem;
     }
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
 }

@@ -1,15 +1,7 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "**/*"
-  ],
-  "plugins": [
-    "@typescript-eslint",
-    "@nrwl/nx",
-    "jsdoc",
-    "header",
-    "deprecation"
-  ],
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@typescript-eslint", "@nrwl/nx", "jsdoc", "header", "deprecation"],
   "extends": [
     "eslint:recommended",
     "plugin:jsdoc/recommended",
@@ -19,12 +11,7 @@
   ],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "settings": {
         "jsdoc": {
           "ignorePrivate": true,
@@ -36,26 +23,15 @@
       }
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/typescript"
-      ],
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
       "parserOptions": {
         "project": "./tsconfig.*?.json"
       },
       "rules": {
-        "eqeqeq": [
-          "error",
-          "always"
-        ],
+        "eqeqeq": ["error", "always"],
         "lines-between-class-members": "error",
-        "max-classes-per-file": [
-          "warn",
-          1
-        ],
+        "max-classes-per-file": ["warn", 1],
         "no-bitwise": "error",
         "no-multiple-empty-lines": [
           "error",
@@ -121,67 +97,39 @@
             ]
           }
         ],
-        "@typescript-eslint/array-type": [
-          "error"
-        ],
+        "@typescript-eslint/array-type": ["error"],
         "@typescript-eslint/naming-convention": [
           "warn",
           {
-            "selector": [
-              "default"
-            ],
+            "selector": ["default"],
             "format": [],
             "leadingUnderscore": "forbid",
             "trailingUnderscore": "forbid"
           },
           {
-            "selector": [
-              "variableLike",
-              "memberLike"
-            ],
-            "format": [
-              "camelCase"
-            ]
+            "selector": ["variableLike", "memberLike"],
+            "format": ["camelCase"]
           },
           {
-            "selector": [
-              "parameter"
-            ],
-            "format": [
-              "camelCase"
-            ],
+            "selector": ["parameter"],
+            "format": ["camelCase"],
             "leadingUnderscore": "allow"
           },
           {
-            "selector": [
-              "enumMember"
-            ],
-            "format": [
-              "PascalCase",
-              "UPPER_CASE"
-            ]
+            "selector": ["enumMember"],
+            "format": ["PascalCase", "UPPER_CASE"]
           },
           {
-            "selector": [
-              "typeLike"
-            ],
-            "format": [
-              "PascalCase"
-            ]
+            "selector": ["typeLike"],
+            "format": ["PascalCase"]
           },
           {
             "selector": "interface",
-            "format": [
-              "PascalCase"
-            ],
-            "prefix": [
-              "I"
-            ]
+            "format": ["PascalCase"],
+            "prefix": ["I"]
           }
         ],
-        "@typescript-eslint/explicit-module-boundary-types": [
-          "warn"
-        ],
+        "@typescript-eslint/explicit-module-boundary-types": ["warn"],
         "@typescript-eslint/ban-ts-comment": [
           "error",
           {
@@ -205,9 +153,7 @@
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": [
-                  "*"
-                ]
+                "onlyDependOnLibsWithTags": ["*"]
               }
             ],
             "enforceBuildableLibDependency": true
@@ -258,12 +204,8 @@
       }
     },
     {
-      "files": [
-        "*.js"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/javascript"
-      ],
+      "files": ["*.js"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {
         "@typescript-eslint/no-var-requires": "off",
         "no-undef": "off",
@@ -272,9 +214,7 @@
       }
     },
     {
-      "files": [
-        "*.spec.ts"
-      ],
+      "files": ["*.spec.ts"],
       "rules": {
         "@typescript-eslint/no-use-before-define": "off",
         "@typescript-eslint/no-floating-promises": "off",
@@ -283,24 +223,16 @@
           "warn",
           {
             // Part of variableLike but with special rule
-            "selector": [
-              "variable"
-            ],
+            "selector": ["variable"],
             // In test specifications mocked classes using jest.fn should have
             // PascalCase.
-            "format": [
-              "camelCase",
-              "PascalCase"
-            ]
+            "format": ["camelCase", "PascalCase"]
           }
         ]
       }
     },
     {
-      "files": [
-        "**/stubs/*.ts",
-        "*.spec.ts"
-      ],
+      "files": ["**/stubs/*.ts", "*.spec.ts"],
       "rules": {
         "jsdoc/require-jsdoc": "off",
         "jsdoc/require-param": "off",

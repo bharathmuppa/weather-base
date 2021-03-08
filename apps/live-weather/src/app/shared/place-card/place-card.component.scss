@@ -1,28 +1,28 @@
 :host {
-    width: 100%;
+  width: 100%;
 }
 
 .place-card {
-    .place-card__image {
-        filter: brightness(80%);
-        height: 230px;
+  .place-card__image {
+    filter: brightness(80%);
+    height: 230px;
 
-        &:before {
-            content: 'Image not available';
-            display: block;
-            position: absolute;
-            height: 230px;
-            background-size: contain;
-            width: 100%;
-            text-align: center;
-            font-style: italic;
-            color: #b38f8f;
-            line-height: 230px;
-            background-image: url(../../../assets/default-image.png);
-        }
+    &:before {
+      content: 'Image not available';
+      display: block;
+      position: absolute;
+      height: 230px;
+      background-size: contain;
+      width: 100%;
+      text-align: center;
+      font-style: italic;
+      color: #b38f8f;
+      line-height: 230px;
+      background-image: url(../../../assets/default-image.png);
     }
+  }
 
-    .place-card__fav-icon {
-        cursor: pointer;
-    }
+  .place-card__fav-icon {
+    cursor: pointer;
+  }
 }

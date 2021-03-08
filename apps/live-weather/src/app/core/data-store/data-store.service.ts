@@ -1,6 +1,5 @@
 // Copyright WeatherBase 2021
 
-
 import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -8,14 +7,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { IPlace } from '../../shared/models/IPlace';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 /**
  * Service to store and access data across app
  */
 export class DataStoreService {
-
-
   private selectedPlace$: BehaviorSubject<IPlace>;
 
   private favoritePlaces: IPlace[] = JSON.parse(localStorage.getItem('favorites') || '[]');
@@ -51,7 +48,7 @@ export class DataStoreService {
    * @param place details of place
    */
   public setCurrentlySelectedPlace(place: IPlace): void {
-    this.selectedPlace$.next(place)
+    this.selectedPlace$.next(place);
   }
 
   /**
@@ -75,8 +72,7 @@ export class DataStoreService {
    * @param place to be removed
    */
   public removeFavoritePlace(place: IPlace): void {
-
-    this.favoritePlaces = this.favoritePlaces.filter(p => place.id === p.id);
+    this.favoritePlaces = this.favoritePlaces.filter((p) => place.id === p.id);
     localStorage.setItem('favorites', JSON.stringify(this.favoritePlaces));
   }
 

@@ -32,7 +32,6 @@ import { AirQualityIndexPipe } from './pipes/air-quality-index.pipe';
 
 @NgModule({
   declarations: [
-
     AirPollutionCardComponent,
     AirQualityIndexPipe,
     CurrentWeatherSummaryContainerComponent,
@@ -57,7 +56,7 @@ import { AirQualityIndexPipe } from './pipes/air-quality-index.pipe';
     MatMenuModule,
     MatProgressBarModule,
     MatToolbarModule,
-    NgxChartsModule
+    NgxChartsModule,
   ],
   exports: [
     AirPollutionCardComponent,
@@ -73,10 +72,10 @@ import { AirQualityIndexPipe } from './pipes/air-quality-index.pipe';
     MatToolbarModule,
     PlaceCardComponent,
     PlaceHourlyForecastComponent,
-    SmartPlaceCardComponent
-  ]
+    SmartPlaceCardComponent,
+  ],
 })
 /**
  * Packs all components required for the application
  */
-export class SharedModule { }
+export class SharedModule {}

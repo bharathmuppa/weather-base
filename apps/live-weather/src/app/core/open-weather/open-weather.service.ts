@@ -11,7 +11,7 @@ import { IOpenWeatherReport } from '../../shared/models/IOpenWeatherReport';
 import { IAirPollution } from '../../shared/models/IAirPollution';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 /**
  * Service to fetch data from [OPenWeather API](https://openweathermap.org)
@@ -20,23 +20,18 @@ import { IAirPollution } from '../../shared/models/IAirPollution';
  * 2. [One Call API]{@link https://openweathermap.org/api/one-call-api}
  */
 export class OpenWeatherService {
-
   private currentWeatherApiUrl = environment.openWeatherURL + environment.currentWeatherAPi;
 
   private oneCallApiUrl = environment.openWeatherURL + environment.onceCallAPI;
 
   private airPollutionUrl = environment.openWeatherURL + environment.airPollutionAPI;
 
-
-
   /**
    * Initializes a new instance of the ```OpenWeatherService``` class.
    *
    * @param httpClient client to perform remote api calls
    */
-  constructor(private httpClient: HttpClient) {
-
-  }
+  constructor(private httpClient: HttpClient) {}
 
   /**
    * Gets weather condition for the requested location
@@ -45,8 +40,9 @@ export class OpenWeatherService {
    * @returns weather condition details observer
    */
   public getCurrentWeatherCondition(city: IPlace): Observable<IOpenWeatherReport> {
-    const finalUrl = `${this.oneCallApiUrl}lat=${city.coord.lat}&lon=${city.coord.lon}` +
-      `&exclude=minutely,daily&units=metric&appid=${environment.openWeatherAPIkey}`
+    const finalUrl =
+      `${this.oneCallApiUrl}lat=${city.coord.lat}&lon=${city.coord.lon}` +
+      `&exclude=minutely,daily&units=metric&appid=${environment.openWeatherAPIkey}`;
 
     return this.httpClient.get<IOpenWeatherReport>(finalUrl);
   }
@@ -58,8 +54,9 @@ export class OpenWeatherService {
    * @returns weather condition details observer
    */
   public getAirPollutionDetails(city: IPlace): Observable<IAirPollution> {
-    const finalUrl = `${this.airPollutionUrl}lat=${city.coord.lat}&lon=${city.coord.lon}` +
-      `&appid=${environment.openWeatherAPIkey}`
+    const finalUrl =
+      `${this.airPollutionUrl}lat=${city.coord.lat}&lon=${city.coord.lon}` +
+      `&appid=${environment.openWeatherAPIkey}`;
 
     return this.httpClient.get<IAirPollution>(finalUrl);
   }

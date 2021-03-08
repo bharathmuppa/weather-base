@@ -2,7 +2,6 @@
 
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'weather-base-root',
   templateUrl: './app.component.html',
@@ -11,5 +10,4 @@ import { Component } from '@angular/core';
 /**
  * Acts as root container for the application
  */
-export class AppComponent {
-}
+export class AppComponent {}

@@ -1,11 +1,11 @@
-@import "~@angular/material/theming";
+@import '~@angular/material/theming';
 
 $indigo: mat-color(mat-palette($mat-indigo));
 
 .label {
-    color: rgba($indigo, 0.9)
+  color: rgba($indigo, 0.9);
 }
 
 .value {
-    color: #2b2525
+  color: #2b2525;
 }

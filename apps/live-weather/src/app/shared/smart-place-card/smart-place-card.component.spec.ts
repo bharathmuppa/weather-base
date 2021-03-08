@@ -31,15 +31,23 @@ describe('SmartPlaceCardComponent', () => {
   beforeEach(async () => {
     let openWeatherServiceStub: Partial<OpenWeatherService>;
     openWeatherServiceStub = {
-      getCurrentWeatherCondition: () => { return of(createMock<IOpenWeatherReport>()) }
-    }
+      getCurrentWeatherCondition: () => {
+        return of(createMock<IOpenWeatherReport>());
+      },
+    };
     await TestBed.configureTestingModule({
       declarations: [TestHostComponent, SmartPlaceCardComponent, WeatherIconPipe, RoundoffPipe],
-      imports: [MatCardModule, MatToolbarModule, MatIconModule, MatProgressBarModule, HttpClientTestingModule, RouterTestingModule.withRoutes([])],
+      imports: [
+        MatCardModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatProgressBarModule,
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([]),
+      ],
       providers: [{ provide: OpenWeatherService, useValue: openWeatherServiceStub }],
-      schemas: [NO_ERRORS_SCHEMA]
-    })
-      .compileComponents();
+      schemas: [NO_ERRORS_SCHEMA],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -47,7 +55,9 @@ describe('SmartPlaceCardComponent', () => {
     smartPlaceCardFixture = TestBed.createComponent(SmartPlaceCardComponent);
     testHostComponent = testHostFixture.componentInstance;
     smartPlaceComponent = smartPlaceCardFixture.componentInstance;
-    jest.spyOn(smartPlaceComponent, "getWeatherReport").mockImplementation(() => { return of({ lat: "50" } as unknown as IOpenWeatherReport) })
+    jest.spyOn(smartPlaceComponent, 'getWeatherReport').mockImplementation(() => {
+      return of(({ lat: '50' } as unknown) as IOpenWeatherReport);
+    });
     testHostFixture.detectChanges();
     smartPlaceCardFixture.detectChanges();
   });
@@ -55,15 +65,12 @@ describe('SmartPlaceCardComponent', () => {
   it('should create', () => {
     expect(smartPlaceComponent).toBeTruthy();
   });
-
 });
 
 const mockPlace: IPlace = createMock<IPlace>({ name: 'amsterdam' });
 
 @Component({
   selector: `host-component`,
-  template: `<weather-base-smart-place-card [place]="mockPlace"></weather-base-smart-place-card>`
+  template: `<weather-base-smart-place-card [place]="mockPlace"></weather-base-smart-place-card>`,
 })
-class TestHostComponent {
-}
-
+class TestHostComponent {}

@@ -1,16 +1,27 @@
-<h1>Air Quality Index</h1>
-<div
-  class="dashbaord-container"
-  fxLayout="row"
-  fxLayout.xs="column"
-  fxLayoutAlign="start flex-start"
-  fxLayoutAlign.xs="start center"
-  fxLayoutGap="2rem"
->
-  <weather-base-air-pollution-card
-    fxFlex="30%"
-    fxFlex.xs="100%"
-    *ngFor="let place of placesDetails"
-    [place]="place"
-  ></weather-base-air-pollution-card>
+<div fxLayout="column" fxLayoutAlign="column" fxFill>
+  <div
+    class="dashbaord-container"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="start flex-start"
+    fxLayoutAlign.xs="start center"
+    fxLayoutGap="2rem"
+  >
+    <!-- <weather-base-air-pollution-card
+      fxFlex="30%"
+      fxFlex.xs="100%"
+      class="air-polution-details-container"
+      *ngFor="let place of placesDetails"
+      [place]="place"
+    ></weather-base-air-pollution-card> -->
+    <weather-base-smart-place-card
+      fxFlex="30%"
+      fxFlex.xs="100%"
+      class="air-polution-details-container"
+      *ngFor="let place of placesDetails"
+      [airQuality]="true"
+      [place]="place"
+    >
+    </weather-base-smart-place-card>
+  </div>
 </div>

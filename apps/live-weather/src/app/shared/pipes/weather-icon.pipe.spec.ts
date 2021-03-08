@@ -8,7 +8,6 @@ describe('WeatherIconPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-
   it('should transform xy to http://openweathermap.org/img/w/xy.png', () => {
     // Arrange
     const pipe = new WeatherIconPipe();

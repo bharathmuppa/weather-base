@@ -1,5 +1,3 @@
-
-
 # WeatherBase
 
 ## Content
@@ -12,7 +10,6 @@
 6. [Documentation](#documentation)
 7. [Commands](#useful-commands)
 8. [Others](#others)
-
 
 # Introduction
 
@@ -45,27 +42,27 @@ It can be extendable to the other parts of world.
 This project makes use of
 
 1. Open Weather API (Weather Data)
-    - Go to [Open weather](https://openweathermap.org/api)
-    - Subscribe to corresponding api
-    - Add a new API key
-    - Place the new key in angular environment file
+
+   - Go to [Open weather](https://openweathermap.org/api)
+   - Subscribe to corresponding api
+   - Add a new API key
+   - Place the new key in angular environment file
 
 2. Google API (Images of places)
-    - Go to [Google cloud console](https://console.cloud.google.com/home/dashboard?project=weatherbase-306123)
-    - Select a project
-    - Subscribe to places API
-    - Add an [API key](https://developers.google.com/maps/documentation/places/web-service/get-api-key?hl=it)
-    - Place the new key in angular environment file
+   - Go to [Google cloud console](https://console.cloud.google.com/home/dashboard?project=weatherbase-306123)
+   - Select a project
+   - Subscribe to places API
+   - Add an [API key](https://developers.google.com/maps/documentation/places/web-service/get-api-key?hl=it)
+   - Place the new key in angular environment file
 
 # Project Structure
 
-* This project structure is wel suitable for enterprise level applications to small scale applications.
-* It is platform agnostic architecture
-* Learn more about [Nx](#nx) here
-* Configured with latest eslint rules
-* Prettier is in place to format the files on Save and on Request
-* Equipped with code snippets to help developers to ease the process of documentation
-
+- This project structure is wel suitable for enterprise level applications to small scale applications.
+- It is platform agnostic architecture
+- Learn more about [Nx](#nx) here
+- Configured with latest eslint rules
+- Prettier is in place to format the files on Save and on Request
+- Equipped with code snippets to help developers to ease the process of documentation
 
 # Deployment
 
@@ -77,6 +74,7 @@ After check code will be pushed to the corresponding branch in github and automa
 Latest Documents will be available [here](https://weather-base-docs.netlify.app/)
 
 # Useful Commands
+
 Run `ng g component my-component --project=my-app` to generate a new component.
 Run `npm run generate:Docs` to generate docs.
 Run `npm run dep-graph` to check whole dependencies between projects and libs in this repo.
@@ -110,7 +108,6 @@ Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Further help
-
 
 This project was generated using [Nx](https://nx.dev).
 

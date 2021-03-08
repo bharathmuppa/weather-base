@@ -14,14 +14,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'weather-base-city-search',
   templateUrl: './city-search.component.html',
-  styleUrls: ['./city-search.component.scss']
+  styleUrls: ['./city-search.component.scss'],
 })
 /**
  * Construct elements required for city search
  */
 export class CitySearchComponent implements OnInit {
-
-
   /**
    * Name of the requested city
    */
@@ -52,18 +50,17 @@ export class CitySearchComponent implements OnInit {
   constructor(
     private placesService: PlacesService,
     private dataStoreService: DataStoreService,
-    private router: Router) {
-
+    private router: Router
+  ) {
     this.cityNameControl = new FormControl();
-    this.filteredCities$ = this.cityNameControl.valueChanges
-      .pipe(
-        startWith(''),
-        filter(res => res.length > 2),
-        debounceTime(500),
-        distinctUntilChanged(),
-        map(value => typeof value === 'string' ? value : value.name),
-        map(name => name ? this.filter(name) : this.allCities.slice())
-      );
+    this.filteredCities$ = this.cityNameControl.valueChanges.pipe(
+      startWith(''),
+      filter((res) => res.length > 2),
+      debounceTime(500),
+      distinctUntilChanged(),
+      map((value) => (typeof value === 'string' ? value : value.name)),
+      map((name) => (name ? this.filter(name) : this.allCities.slice()))
+    );
   }
 
   /**
@@ -82,11 +79,9 @@ export class CitySearchComponent implements OnInit {
    * @param place location details of city
    */
   public getWeatherCondition(place: IPlace): void {
-
     this.dataStoreService.setCurrentlySelectedPlace(place);
 
     this.router.navigate(['/city', place.name, place.id]);
-
   }
 
   /**
@@ -104,6 +99,4 @@ export class CitySearchComponent implements OnInit {
 
     return this.placesService.getPlacesByName(cityLowercase);
   }
-
-
 }

@@ -41,4 +41,11 @@
     *ngIf="weather?.current"
   >
   </weather-base-current-weather-details-container>
+  <weather-base-air-pollution-card
+    *ngIf="airQuality"
+    fxFlex="30%"
+    fxFlex.xs="100%"
+    class="air-polution-details-container"
+    [place]="place"
+  ></weather-base-air-pollution-card>
 </div>

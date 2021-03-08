@@ -4,13 +4,12 @@
  * Interface for classes that implements geological coordinates
  */
 export interface ICoordinate {
-
-    /**
-     * Longitude of the place
-     */
-    lon: string;
-    /**
-     * Latitude of the place
-     */
-    lat: string;
+  /**
+   * Longitude of the place
+   */
+  lon: string;
+  /**
+   * Latitude of the place
+   */
+  lat: string;
 }

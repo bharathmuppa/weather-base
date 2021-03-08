@@ -9,13 +9,12 @@ import { IPlace } from '../models/IPlace';
   selector: 'weather-base-place-card',
   templateUrl: './place-card.component.html',
   styleUrls: ['./place-card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 /**
  * Visualize place model as material card element
  */
 export class PlaceCardComponent {
-
   /** Represents current time */
   public currentTime = new Date().toISOString();
 
@@ -35,5 +34,4 @@ export class PlaceCardComponent {
     this.addPlaceToFavorites.emit(this.place);
     this.place.isFavorite = !this.place.isFavorite;
   }
-
 }

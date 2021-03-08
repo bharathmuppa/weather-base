@@ -10,7 +10,6 @@ describe('DataStoreService', () => {
   let service: DataStoreService;
 
   beforeEach(() => {
-
     jest.spyOn(window.localStorage.__proto__, 'setItem');
     window.localStorage.__proto__.setItem = jest.fn();
 
@@ -63,5 +62,3 @@ describe('DataStoreService', () => {
     expect(service.getAllFavoritePlaces().length).toEqual(1);
   });
 });
-
-

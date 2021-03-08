@@ -3,13 +3,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'weatherIcon'
+  name: 'weatherIcon',
 })
 /**
  * Helps in transforming icon string to open weather icon URL
  */
 export class WeatherIconPipe implements PipeTransform {
-
   /**
    * @internal
    * @param value value to be transformed
@@ -17,5 +16,4 @@ export class WeatherIconPipe implements PipeTransform {
   transform(value: unknown): unknown {
     return `http://openweathermap.org/img/w/${value}.png`;
   }
-
 }

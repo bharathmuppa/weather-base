@@ -12,9 +12,8 @@ describe('CurrentWeatherSummaryContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CurrentWeatherSummaryContainerComponent, WeatherIconPipe, RoundoffPipe]
-    })
-      .compileComponents();
+      declarations: [CurrentWeatherSummaryContainerComponent, WeatherIconPipe, RoundoffPipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {

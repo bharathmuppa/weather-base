@@ -6,17 +6,15 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   selector: 'weather-base-info-card',
   templateUrl: './info-card.component.html',
   styleUrls: ['./info-card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 /**
  * Creates a information card with label and value
  */
 export class InfoCardComponent {
-
   @Input() label = '';
 
   @Input() value = '';
 
-  @Input() direction = 'column'
-
+  @Input() direction = 'column';
 }

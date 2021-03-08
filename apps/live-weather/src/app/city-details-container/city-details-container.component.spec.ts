@@ -13,10 +13,8 @@ describe('CityDetailsContainerComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CityDetailsContainerComponent],
-      imports: [RouterTestingModule.withRoutes([]),
-        HttpClientTestingModule]
-    })
-      .compileComponents();
+      imports: [RouterTestingModule.withRoutes([]), HttpClientTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,17 +1,8 @@
 // Copyright WeatherBase 2021
 
-import {
-  ComponentFixture,
-  TestBed
-}
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-  from '@angular/core/testing';
-
-import {
-  CountryFlagComponent
-}
-
-  from './country-flag.component';
+import { CountryFlagComponent } from './country-flag.component';
 
 describe('CountryFlagComponent', () => {
   let component: CountryFlagComponent;
@@ -19,24 +10,18 @@ describe('CountryFlagComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CountryFlagComponent]
+      declarations: [CountryFlagComponent],
     }).compileComponents();
-  }
-
-  );
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CountryFlagComponent);
     component = fixture.componentInstance;
-  }
-
-  );
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  }
-
-  );
+  });
 
   it('should get image src with country code ', () => {
     // Arrange
@@ -49,9 +34,5 @@ describe('CountryFlagComponent', () => {
 
     // Assert
     expect(imageEle.src).toBe(expectedText);
-  }
-
-  );
-}
-
-);
+  });
+});

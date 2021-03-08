@@ -3,13 +3,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'roundoff'
+  name: 'roundoff',
 })
 /**
  * Perform a round off approach for numbers
  */
 export class RoundoffPipe implements PipeTransform {
-
   /**
    * @internal
    */
@@ -20,5 +19,4 @@ export class RoundoffPipe implements PipeTransform {
 
     return Math.round(value);
   }
-
 }

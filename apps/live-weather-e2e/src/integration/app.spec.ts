@@ -25,5 +25,4 @@ describe('live-weather', () => {
   //   cy.get('.go-to-favorites').click();
   //   cy.get('#place-name').contains('Gemeente Eindhoven');
   // });
-
 });

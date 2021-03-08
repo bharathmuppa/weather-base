@@ -19,8 +19,7 @@ describe('PlaceCardComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [TestHostComponent, PlaceCardComponent, WeatherIconPipe, RoundoffPipe],
       imports: [MatCardModule, MatToolbarModule, MatIconModule],
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -42,10 +41,8 @@ describe('PlaceCardComponent', () => {
   });
 });
 
-
 @Component({
   selector: `host-component`,
-  template: `<weather-base-place-card [place]="{'name': 'amsterdam'}"></weather-base-place-card>`
+  template: `<weather-base-place-card [place]="{ name: 'amsterdam' }"></weather-base-place-card>`,
 })
-class TestHostComponent {
-}
+class TestHostComponent {}

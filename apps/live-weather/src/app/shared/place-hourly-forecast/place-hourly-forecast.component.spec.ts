@@ -14,9 +14,8 @@ describe('PlaceHourlyForecastComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [PlaceHourlyForecastComponent],
       imports: [MatToolbarModule],
-      schemas: [NO_ERRORS_SCHEMA]
-    })
-      .compileComponents();
+      schemas: [NO_ERRORS_SCHEMA],
+    }).compileComponents();
   });
 
   beforeEach(() => {

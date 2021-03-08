@@ -26,9 +26,9 @@ describe('HeaderComponent', () => {
         MatToolbarModule,
         MatIconModule,
         SharedModule,
-        MatMenuModule]
-    })
-      .compileComponents();
+        MatMenuModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

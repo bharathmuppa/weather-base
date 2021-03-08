@@ -7,7 +7,7 @@ import { IWeatherDetail } from '../models/IWeatherDetail';
   selector: 'weather-base-current-weather-summary-container',
   templateUrl: './current-weather-summary-container.component.html',
   styleUrls: ['./current-weather-summary-container.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 /**
  * Create a ui container with current weather image along with summary.
@@ -17,5 +17,4 @@ export class CurrentWeatherSummaryContainerComponent {
   public currentTime = new Date().toISOString();
 
   @Input() weather!: IWeatherDetail;
-
 }

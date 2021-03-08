@@ -26,9 +26,9 @@ describe('CitySearchComponent', () => {
         MatFormFieldModule,
         ReactiveFormsModule,
         FormsModule,
-        HttpClientTestingModule]
-    })
-      .compileComponents();
+        HttpClientTestingModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

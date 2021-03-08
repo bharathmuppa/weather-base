@@ -11,13 +11,12 @@ import { IPlace } from '../shared/models/IPlace';
 @Component({
   selector: 'weather-base-favorite-places',
   templateUrl: './favorite-places.component.html',
-  styleUrls: ['./favorite-places.component.scss']
+  styleUrls: ['./favorite-places.component.scss'],
 })
 /**
  * Show favorite places in a container
  */
 export class FavoritePlacesComponent implements OnInit {
-
   public favoritePlaces: IPlace[] = [];
 
   public favoritePlacesAndWeather: { place: IPlace; weather: IOpenWeatherReport }[] = [];
@@ -27,7 +26,7 @@ export class FavoritePlacesComponent implements OnInit {
    *
    * @param dataStoreService instance to request data state
    */
-  constructor(private dataStoreService: DataStoreService) { }
+  constructor(private dataStoreService: DataStoreService) {}
 
   /**
    * @internal
@@ -42,8 +41,6 @@ export class FavoritePlacesComponent implements OnInit {
    * @param place to be added to favorite collection
    */
   public onFavoriteAdd(place: IPlace): void {
-    this.dataStoreService.addFavoritePlace(place)
+    this.dataStoreService.addFavoritePlace(place);
   }
-
-
 }

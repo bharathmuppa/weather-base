@@ -22,7 +22,6 @@ import { GooglePlacesService } from './core/google-places/google-places.service'
 import { CityDetailsContainerComponent } from './city-details-container/city-details-container.component';
 import { FavoritePlacesComponent } from './favorite-places/favorite-places.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +30,7 @@ import { FavoritePlacesComponent } from './favorite-places/favorite-places.compo
     FavoritePlacesComponent,
     CitySearchComponent,
     CityDetailsContainerComponent,
-    FavoritePlacesComponent
+    FavoritePlacesComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -42,25 +41,31 @@ import { FavoritePlacesComponent } from './favorite-places/favorite-places.compo
     HttpClientModule,
     HttpClientJsonpModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
-  providers: [PlacesService, OpenWeatherService, GooglePlacesService, DataStoreService, {
-    provide: APP_INITIALIZER,
-    /**
-     * Loads places data into app
-     *
-     * @param placesService instance to load data
-     * @returns resolvable places data
-     */
-    useFactory: (placesService: PlacesService) => () => {
-      return placesService.getAllPlacesFromServer();
+  providers: [
+    PlacesService,
+    OpenWeatherService,
+    GooglePlacesService,
+    DataStoreService,
+    {
+      provide: APP_INITIALIZER,
+      /**
+       * Loads places data into app
+       *
+       * @param placesService instance to load data
+       * @returns resolvable places data
+       */
+      useFactory: (placesService: PlacesService) => () => {
+        return placesService.getAllPlacesFromServer();
+      },
+      deps: [PlacesService],
+      multi: true,
     },
-    deps: [PlacesService],
-    multi: true
-  }],
+  ],
   bootstrap: [AppComponent],
 })
 /**
  * Acts as Root Module, which is an normal convention in Enterprise Angular web Apps
  */
-export class AppModule { }
+export class AppModule {}

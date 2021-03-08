@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'weather-base-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 /**
  * Provides header for application
@@ -21,12 +21,14 @@ export class HeaderComponent {
    * @param matIconRegistry to register and display icons
    * @param router instance of angular router
    */
-  constructor(private domSanitizer: DomSanitizer, private matIconRegistry: MatIconRegistry, private router: Router) {
+  constructor(
+    private domSanitizer: DomSanitizer,
+    private matIconRegistry: MatIconRegistry,
+    private router: Router
+  ) {
     this.matIconRegistry.addSvgIcon(
       `weather-base-icon`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/wb.svg')
     );
   }
-
-
 }

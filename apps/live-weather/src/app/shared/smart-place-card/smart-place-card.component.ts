@@ -11,15 +11,15 @@ import { IPlace } from '../models/IPlace';
 @Component({
   selector: 'weather-base-smart-place-card',
   templateUrl: './smart-place-card.component.html',
-  styleUrls: ['./smart-place-card.component.scss']
+  styleUrls: ['./smart-place-card.component.scss'],
 })
 /**
  * Visualize place model as material card element
  */
 export class SmartPlaceCardComponent implements OnChanges {
-
-
   @Input() place!: IPlace;
+
+  @Input() airQuality = false;
 
   weather: IOpenWeatherReport | null = null;
 
@@ -37,9 +37,7 @@ export class SmartPlaceCardComponent implements OnChanges {
    * @param openWeatherService instance to request weather details from open weather
    * @param router instance of angular router
    */
-  constructor(
-    private openWeatherService: OpenWeatherService,
-    private router: Router) { }
+  constructor(private openWeatherService: OpenWeatherService, private router: Router) {}
 
   /**
    * Toggles favorite state of a place
@@ -50,7 +48,6 @@ export class SmartPlaceCardComponent implements OnChanges {
     }
     this.place.isFavorite = !this.place.isFavorite;
     this.addPlaceToFavorites.emit(this.place);
-
   }
 
   /**
@@ -78,14 +75,16 @@ export class SmartPlaceCardComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.place && changes.place.currentValue) {
       this.loadingWeather = true;
-      this.getWeatherReport(this.place).subscribe((weather: IOpenWeatherReport) => {
-        this.weather = weather;
-        this.loadingWeather = false;
-      }, _ => {
-        this.weather = null;
-        this.loadingWeather = false;
-      });
+      this.getWeatherReport(this.place).subscribe(
+        (weather: IOpenWeatherReport) => {
+          this.weather = weather;
+          this.loadingWeather = false;
+        },
+        (_) => {
+          this.weather = null;
+          this.loadingWeather = false;
+        }
+      );
     }
   }
-
 }

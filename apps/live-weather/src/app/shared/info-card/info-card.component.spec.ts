@@ -12,9 +12,8 @@ describe('InfoCardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [InfoCardComponent],
-      imports: [FlexLayoutModule]
-    })
-      .compileComponents();
+      imports: [FlexLayoutModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
