@@ -13,6 +13,10 @@
       >face</mat-icon
     >
     <mat-menu #menu="matMenu">
+      <a mat-button mat-menu-item [routerLink]="'/home'" class="pointer go-to-favorites">
+        <mat-icon color="accent">home</mat-icon>
+        <span>Home</span>
+      </a>
       <a mat-button mat-menu-item [routerLink]="'/favorites'" class="pointer go-to-favorites">
         <mat-icon color="accent">favorite</mat-icon>
         <span>Favorites</span>

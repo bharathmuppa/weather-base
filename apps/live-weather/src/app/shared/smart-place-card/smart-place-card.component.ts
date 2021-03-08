@@ -21,6 +21,8 @@ export class SmartPlaceCardComponent implements OnChanges {
 
   @Input() airQuality = false;
 
+  @Input() placeImage = false;
+
   weather: IOpenWeatherReport | null = null;
 
   /** Flag to check loading status of weather */
@@ -37,7 +39,7 @@ export class SmartPlaceCardComponent implements OnChanges {
    * @param openWeatherService instance to request weather details from open weather
    * @param router instance of angular router
    */
-  constructor(private openWeatherService: OpenWeatherService, private router: Router) {}
+  constructor(private openWeatherService: OpenWeatherService, private router: Router) { }
 
   /**
    * Toggles favorite state of a place

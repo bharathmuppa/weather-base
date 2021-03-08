@@ -19,7 +19,7 @@
   </mat-toolbar>
   <img
     mat-card-image
-    *ngIf="place?.photoUrl"
+    *ngIf="place?.photoUrl && placeImage"
     [src]="place?.photoUrl"
     alt="A beautiful picture of {{ place?.name }}"
     class="place-card__image"

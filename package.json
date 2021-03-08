@@ -26,7 +26,8 @@
     "generate:Docs": "compodoc -p ./tsconfig.compodoc.json ",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
