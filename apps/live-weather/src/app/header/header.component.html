@@ -9,7 +9,11 @@
     <mat-icon svgIcon="weather-base-icon"></mat-icon>
     <h2 class="pointer" id="header-title" [routerLink]="'/home'">Weather Base</h2>
     <span fxFlex></span>
-    <mat-icon [matMenuTriggerFor]="menu" aria-label="User Profile button" id="profile-icon"
+    <mat-icon
+      [matMenuTriggerFor]="menu"
+      aria-label="User Profile button"
+      id="profile-icon"
+      class="pointer"
       >face</mat-icon
     >
     <mat-menu #menu="matMenu">
