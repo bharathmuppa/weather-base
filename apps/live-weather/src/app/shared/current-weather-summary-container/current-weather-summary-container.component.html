@@ -1,10 +1,10 @@
-<div fxFill fxLayout="row" fxLayoutAlign="start center" class="temperature-card">
-  <img [src]="weather?.weather[0]?.icon | weatherIcon" class="weather-icon" fxFlex="5rem" />
+<div fxFill fxLayout="row" fxLayoutAlign="start center" class="temperature-card" *ngIf="weather">
+  <img [src]="weather!.weather[0]?.icon | weatherIcon" class="weather-icon" fxFlex="5rem" />
   <div fxLayout="column" fxLayoutAlign="center start" fxFlex>
-    <span class="temperature">{{ weather?.temp | roundoff }} °C</span>
+    <span class="temperature">{{ weather!.temp | roundoff }} °C</span>
     <span class="grey"
-      >Feels like <b>{{ weather?.feels_like | roundoff }}°C</b>,
-      {{ weather?.weather[0].description }}</span
+      >Feels like <b>{{ weather!.feels_like | roundoff }}°C</b>,
+      {{ weather!.weather[0].description }}</span
     >
     <span class="grey mat-small">{{ currentTime | date: 'longTime' }}</span>
   </div>

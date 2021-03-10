@@ -17,7 +17,11 @@ export class AirQualityIndexPipe implements PipeTransform {
    * @param value of air quality index
    * @returns human readable air quality
    */
-  transform(value: number): string {
-    return this.airQualityCode[value];
+  transform(value: string | number | undefined): string {
+    if (value === undefined || value === null) {
+      return '';
+    }
+
+    return this.airQualityCode[+value];
   }
 }

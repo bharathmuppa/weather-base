@@ -33,7 +33,7 @@ describe('PlaceCardComponent', () => {
   });
 
   it('should display amsterdam in place-name field', () => {
-    // Assign
+    // Arrange
     const placeName = fixture.nativeElement.querySelector('#place-name');
 
     // Assert
@@ -45,4 +45,4 @@ describe('PlaceCardComponent', () => {
   selector: `host-component`,
   template: `<weather-base-place-card [place]="{ name: 'amsterdam' }"></weather-base-place-card>`,
 })
-class TestHostComponent {}
+class TestHostComponent { }

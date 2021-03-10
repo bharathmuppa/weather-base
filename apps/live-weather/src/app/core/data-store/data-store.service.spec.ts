@@ -25,7 +25,7 @@ describe('DataStoreService', () => {
   });
 
   it('should match no of places to be 1', () => {
-    // Assign
+    // Arrange
     const mockPlace = createMock<IPlace>();
 
     // Act
@@ -36,7 +36,7 @@ describe('DataStoreService', () => {
   });
 
   it('should match no of places to be 2', () => {
-    // Assign
+    // Arrange
     const mockPlace1 = createMock<IPlace>({ id: 1 });
     const mockPlace2 = createMock<IPlace>({ id: 2 });
 
@@ -49,7 +49,7 @@ describe('DataStoreService', () => {
   });
 
   it('should return 1 when you remove a place from  favorites list with 2 items', () => {
-    // Assign
+    // Arrange
     const mockPlace1 = createMock<IPlace>({ id: 1 });
     const mockPlace2 = createMock<IPlace>({ id: 2 });
 

@@ -2,11 +2,14 @@
   <img src="../../../assets/air-quality.png" fxFlexAlign="center" />
   <div class="air-quality__information-container" fxLayout="row" fxLayoutAlign="start center">
     <weather-base-info-card
+      *ngIf="airPollutionReport?.main?.aqi"
+      id="air-quality"
       label="Air Quality"
       value="{{ airPollutionReport?.main?.aqi | airQualityIndex }}"
     ></weather-base-info-card>
     <span fxFlex></span>
     <weather-base-info-card
+      id="co-card"
       label="Corbon Monoxide"
       value="{{ airPollutionReport?.components?.co }}μg/m3"
     ></weather-base-info-card>

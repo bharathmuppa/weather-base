@@ -8,40 +8,40 @@ describe('RoundoffPipe', () => {
     expect(pipe).toBeTruthy();
   });
   it('should transform 2.57 to 3 ', () => {
-    // Assign
+    // Arrange
     const pipe = new RoundoffPipe();
     // Act & Assert
     expect(pipe.transform(2.57)).toEqual(3);
   });
 
   it('should transform 2.47 to 2 ', () => {
-    // Assign
+    // Arrange
     const pipe = new RoundoffPipe();
     // Act & Assert
     expect(pipe.transform(2.47)).toEqual(2);
   });
 
   it('should transform 2.7 to 3 ', () => {
-    // Assign
+    // Arrange
     const pipe = new RoundoffPipe();
     // Act & Assert
     expect(pipe.transform(2.7)).toEqual(3);
   });
 
   it('should transform 2.1 to 2 ', () => {
-    // Assign
+    // Arrange
     const pipe = new RoundoffPipe();
     // Act & Assert
     expect(pipe.transform(2.1)).toEqual(2);
   });
   it('should transform -2.1 to -2 ', () => {
-    // Assign
+    // Arrange
     const pipe = new RoundoffPipe();
     // Act & Assert
     expect(pipe.transform(-2.1)).toEqual(-2);
   });
   it('should transform -2.8 to -3 ', () => {
-    // Assign
+    // Arrange
     const pipe = new RoundoffPipe();
     // Act & Assert
     expect(pipe.transform(-2.8)).toEqual(-3);

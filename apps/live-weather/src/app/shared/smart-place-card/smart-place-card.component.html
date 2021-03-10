@@ -26,8 +26,8 @@
   />
 
   <weather-base-current-weather-summary-container
-    [weather]="weather.current"
-    *ngIf="weather?.current"
+    [weather]="weather!.current"
+    *ngIf="weather && weather.current"
   ></weather-base-current-weather-summary-container>
   <div *ngIf="!weather" fxLayout="column" fxLayoutGap="1rem" fxLayoutAlign="start center">
     <mat-progress-bar *ngIf="loadingWeather" mode="indeterminate" color="accent"></mat-progress-bar>
@@ -37,8 +37,8 @@
 
   <weather-base-current-weather-details-container
     fxFlex
-    [weather]="weather.current"
-    *ngIf="weather?.current"
+    [weather]="weather!.current"
+    *ngIf="weather && weather.current"
   >
   </weather-base-current-weather-details-container>
   <weather-base-air-pollution-card

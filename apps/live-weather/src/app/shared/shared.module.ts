@@ -62,6 +62,7 @@ import { AirQualityIndexPipe } from './pipes/air-quality-index.pipe';
     AirPollutionCardComponent,
     CountryFlagComponent,
     FlexLayoutModule,
+    InfoCardComponent,
     MatAutocompleteModule,
     MatCardModule,
     MatFormFieldModule,
@@ -78,4 +79,4 @@ import { AirQualityIndexPipe } from './pipes/air-quality-index.pipe';
 /**
  * Packs all components required for the application
  */
-export class SharedModule {}
+export class SharedModule { }
